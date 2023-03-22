@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b6712ee6-aee4-46c4-b08d-bd15405a6f0d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/MainBuildingData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/UpgradeMenuData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TimerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.6/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TradeMenuData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ShipVillagerData.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LevitatingIcons.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/PlayerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/OilTowerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Storage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/StorageData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/OilVillagerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OilVillager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/OilTowerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/MainBuildingData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/OilVillagerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShipVillager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ShipVillagerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ShipData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TimerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TimeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShipMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TradeMenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TradeMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/UpgradeMenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/UpgradeMenu.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MbyfsfwzGX910btF8dhOKXAuN1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6712ee6-aee4-46c4-b08d-bd15405a6f0d" name="Default Changelist" comment="" />
+      <created>1678050682950</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678050682950</updated>
+      <workItem from="1678050685769" duration="697000" />
+      <workItem from="1678371544715" duration="607000" />
+      <workItem from="1678378752503" duration="3709000" />
+      <workItem from="1678384292942" duration="12726000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

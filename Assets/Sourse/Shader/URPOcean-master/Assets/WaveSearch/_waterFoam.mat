@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _waterFoam
+  m_Shader: {fileID: 4800000, guid: 1a629c730af7ec5429ed2240e1f2c083, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _ALPHABLEND_ON
+  - _PROJECTED_OFF
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - ALWAYS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _FoamMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Depth: 1.56
+    - _Fade: 0.002
+    - _Fresnel: 0.04
+    - _PROJECTED: 0
+    - _Shadow: 0.35
+    - _ShallowDepth: 5
+    - _Shininess: 32
+    - _SunIntensity: 0.05
+    - _Transparency: 0.5
+    m_Colors:
+    - _BaseColor: {r: 0.29142934, g: 0.53334284, b: 0.5566038, a: 1}
+    - _DistortParams: {r: 0.05, g: 0.05, b: 4, a: 3}
+    - _Foam: {r: 1, g: 1, b: 0.5, a: 0.1}
+    - _FoamPeak: {r: 1, g: 1, b: 1, a: 1}
+    - _ShallowColor: {r: 0.09999997, g: 0.39999998, b: 0.42999998, a: 1}
+  m_BuildTextureStacks: []
