@@ -140,7 +140,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         if (storage.Coins > _storageCapacityValue)
         {
-            storage.Capacity += 10;
+            storage.OilCapacity += 10;
             storage.Coins -= _storageCapacityValue;
             _storageCapacityValue = (int)(_storageCapacityValue * _valueMultiplier);
             audioManager.Play("Upgrade");

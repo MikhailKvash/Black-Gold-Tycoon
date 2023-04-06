@@ -7,6 +7,7 @@ public partial class OilVillagerData
     public int capacity;
     public bool takeOilOnce;
     public bool dropOilOnce;
+    public bool box;
 
     public OilVillagerData(OilVillager oilVillager)
     {
@@ -15,6 +16,7 @@ public partial class OilVillagerData
         capacity = oilVillager.Capacity;
         takeOilOnce = oilVillager.TakeOilOnce;
         dropOilOnce = oilVillager.DropOilOnce;
+        box = oilVillager.Box;
         
         position = new float[3];
         position[0] = oilVillager.transform.position.x;

@@ -5,12 +5,14 @@ public class ShipVillagerData
     public bool singleDelivery;
     public bool carryingCargo;
     public bool tookCargo;
+    public bool box;
 
     public ShipVillagerData(ShipVillager shipVillager)
     {
         singleDelivery = shipVillager.SingleDelivery;
         carryingCargo = shipVillager.CarryingCargo;
         tookCargo = shipVillager.TookCargo;
+        box = shipVillager.Box;
         
         position = new float[3];
         position[0] = shipVillager.transform.position.x;

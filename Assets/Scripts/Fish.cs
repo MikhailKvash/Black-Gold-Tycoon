@@ -21,17 +21,17 @@ public class Fish : MonoBehaviour
 
     private void Awake()
     {
-        _spawnPoint1 = GameObject.Find("SpawnPoint (0)");
-        _spawnPoint2 = GameObject.Find("SpawnPoint (1)");
-        _spawnPoint3 = GameObject.Find("SpawnPoint (2)");
-        _spawnPoint4 = GameObject.Find("SpawnPoint (3)");
-        _spawnPoint5 = GameObject.Find("SpawnPoint (4)");
+        _spawnPoint1 = GameObject.Find("FishSpawnPoint (0)");
+        _spawnPoint2 = GameObject.Find("FishSpawnPoint (1)");
+        _spawnPoint3 = GameObject.Find("FishSpawnPoint (2)");
+        _spawnPoint4 = GameObject.Find("FishSpawnPoint (3)");
+        _spawnPoint5 = GameObject.Find("FishSpawnPoint (4)");
         
-        _destinationPoint1 = GameObject.Find("DestinationPoint (0)");
-        _destinationPoint2 = GameObject.Find("DestinationPoint (1)");
-        _destinationPoint3 = GameObject.Find("DestinationPoint (2)");
-        _destinationPoint4 = GameObject.Find("DestinationPoint (3)");
-        _destinationPoint5 = GameObject.Find("DestinationPoint (4)");
+        _destinationPoint1 = GameObject.Find("FishDestinationPoint (0)");
+        _destinationPoint2 = GameObject.Find("FishDestinationPoint (1)");
+        _destinationPoint3 = GameObject.Find("FishDestinationPoint (2)");
+        _destinationPoint4 = GameObject.Find("FishDestinationPoint (3)");
+        _destinationPoint5 = GameObject.Find("FishDestinationPoint (4)");
         
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _speed = Random.Range(3, 6);
@@ -64,7 +64,7 @@ public class Fish : MonoBehaviour
         }
         if (spawnPointDistance3 <= 0.3f)
         {
-            int randomDestination = Random.Range(0, 1);
+            int randomDestination = Random.Range(0, 2);
             if (randomDestination == 0)
             {
                 _navMeshAgent.destination = _destinationPoint3.transform.position;

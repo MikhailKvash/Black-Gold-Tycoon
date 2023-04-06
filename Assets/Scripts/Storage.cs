@@ -1,20 +1,23 @@
-//using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class Storage : MonoBehaviour
 {
     // Stores resourses and shows amounts in menu.
     
     [SerializeField] private float oil;
-    [SerializeField] private int fuel;
-    [SerializeField] private int wood;
-    [SerializeField] private int stone;
+    [SerializeField] private float fuel;
+    [SerializeField] private float wood;
+    [SerializeField] private float stone;
     [SerializeField] private float coins;
-    [SerializeField] private int gems;
+    [SerializeField] private float gems;
 
-    [SerializeField] private float capacity;
+    [SerializeField] private float oilCapacity;
+    [SerializeField] private float fuelCapacity;
+    [SerializeField] private float woodCapacity;
+    [SerializeField] private float stoneCapacity;
 
     [SerializeField] private GameObject fuelDisplay;
     [SerializeField] private GameObject oilDisplay;
@@ -37,43 +40,64 @@ public class Storage : MonoBehaviour
     public float Oil
     {
         get => oil;
-        set => oil = value;
+        set
+        {
+            oil = (float) Math.Round(value, 1);
+        }
+    }
+    
+    public float Fuel
+    {
+        get => fuel;
+        set => fuel = value;
+    }
+    
+    public float Wood
+    {
+        get => wood;
+        set => wood = value;
     }
 
+    public float Stone
+    {
+        get => stone;
+        set => stone = value;
+    }
+    
     public float Coins
     {
         get => coins;
         set => coins = value;
     }
 
-    public float Capacity
-    {
-        get => capacity;
-        set => capacity = value;
-    }
-
-    public int Fuel
-    {
-        get => fuel;
-        set => fuel = value;
-    }
-
-    public int Wood
-    {
-        get => wood;
-        set => wood = value;
-    }
-
-    public int Stone
-    {
-        get => stone;
-        set => stone = value;
-    }
-
-    public int Gems
+    public float Gems
     {
         get => gems;
         set => gems = value;
+    }
+    
+    public float OilCapacity
+    {
+        get => oilCapacity;
+        set => oilCapacity = value;
+    }
+
+    public float FuelCapacity
+    {
+        get => fuelCapacity;
+        set => fuelCapacity = value;
+    }
+
+    public float WoodCapacity
+    {
+        get => woodCapacity;
+        set => woodCapacity = value;
+    }
+
+    public float StoneCapacity
+    {
+        get => stoneCapacity;
+        set => stoneCapacity = value;
     }
 
     public bool OilFull => _oilCapacityFull;
@@ -94,9 +118,9 @@ public class Storage : MonoBehaviour
         coinsStorageDisplay.GetComponent<TextMeshProUGUI>().text = coins.ToString();
         gemsStorageDisplay.GetComponent<TextMeshProUGUI>().text = gems.ToString();
         
-        capacityDisplay.GetComponent<TextMeshProUGUI>().text = capacity + " ед МАХ";
+        capacityDisplay.GetComponent<TextMeshProUGUI>().text = oilCapacity + " ед МАХ";
 
-        if (oil == capacity)
+        if (oil == oilCapacity)
         {
             _oilCapacityFull = true;
         }

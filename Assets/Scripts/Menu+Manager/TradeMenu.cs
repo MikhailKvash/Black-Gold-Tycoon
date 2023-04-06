@@ -30,6 +30,7 @@ public class TradeMenu : MonoBehaviour
     private float _oilOnSlider;
     private bool _shipAway;
     private bool _cargoWaiting;
+    private bool _sendShipButtonOff;
     
     public float ProfitCoins
     {
@@ -55,20 +56,33 @@ public class TradeMenu : MonoBehaviour
         set => _cargoWaiting = value;
     }
 
+    public bool SendShipButtonOff
+    {
+        get => _sendShipButtonOff;
+        set => _sendShipButtonOff = value;
+    }
+
     private void Update()
     {
         coinAmount = oilAmount * 100;
 
-        sendShipButton.SetActive(oilAmount != 0);
-
-        if (oilAmount > storage.Oil)
+        if (_sendShipButtonOff)
         {
-            oilAmount = storage.Oil;
+            sendShipButton.SetActive(false);
+        }
+        else
+        {
+            sendShipButton.SetActive(true);
+        }
+        
+        if (oilAmount <= 0)
+        {
+            _sendShipButtonOff = true;
         }
 
         if (_shipAway)
         {
-            sendShipButton.SetActive(false);
+            _sendShipButtonOff = true;
             sellOilButton.SetActive(false);
             sellLessOilButton.SetActive(false);
             mapButton.SetActive(true);
@@ -96,6 +110,7 @@ public class TradeMenu : MonoBehaviour
         if (storage.Oil > oilAmount)
         {
             oilAmount += 1;
+            _sendShipButtonOff = false;
         }
         else
         {
@@ -117,6 +132,7 @@ public class TradeMenu : MonoBehaviour
         if (_oilOnSlider >= 0)
         {
             oilAmount = _oilOnSlider;
+            _sendShipButtonOff = false;
         }
     }
 
@@ -127,7 +143,7 @@ public class TradeMenu : MonoBehaviour
         sellOilButton.SetActive(false);
         sellLessOilButton.SetActive(false);
         sellSliderOilButton.SetActive(false);
-        sendShipButton.SetActive(false);
+        _sendShipButtonOff = true;
         storage.Oil -= oilAmount;
     }
 
@@ -143,6 +159,6 @@ public class TradeMenu : MonoBehaviour
         sellOilButton.SetActive(true);
         sellLessOilButton.SetActive(true);
         sellSliderOilButton.SetActive(true);
-        sendShipButton.SetActive(true);
+        _sendShipButtonOff = false;
     }
 }

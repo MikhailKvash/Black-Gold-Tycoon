@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
@@ -11,7 +12,61 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private TradeMenu tradeMenu;
     [SerializeField] private UpgradeMenu upgradeMenu;
     [SerializeField] private TimeManager timeManager;
+
+    [SerializeField] private GameObject noLoadingText;
+    private bool _noLoading;
+    private int _noLoadingPref;
     
+    private void Start()
+    {
+        _noLoadingPref = PlayerPrefs.GetInt("NoLoading");
+
+        if (_noLoadingPref == 1) {_noLoading = true;}
+        if (_noLoadingPref == 0) {_noLoading = false;}
+        
+        if (!_noLoading) {LoadProgress();}
+    }
+
+    private void Update()
+    {
+        if (_noLoading)
+        {
+            noLoadingText.GetComponent<TextMeshProUGUI>().text = "Не загружать";
+        }
+        else
+        {
+            noLoadingText.GetComponent<TextMeshProUGUI>().text = "Загружать";
+        }
+        
+    }
+
+    public void LoadOrNo()
+    {
+        if (!_noLoading)
+        {
+            _noLoading = true;
+            PlayerPrefs.SetInt("NoLoading", 1);
+        }
+        else
+        {
+            _noLoading = false;
+            PlayerPrefs.SetInt("NoLoading", 0);
+        }
+    }
+
+    private void OnApplicationPause(bool isPaused)
+    {
+        if (isPaused)
+        {
+            SaveProgress();
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        SaveProgress();
+    }
+
     public void SaveProgress()
     {
         SaveSystem.SaveStorage(storage);
@@ -44,7 +99,7 @@ public class SaveManager : MonoBehaviour
         storage.Wood = storageData.wood;
         storage.Gems = storageData.gems;
         storage.Coins = storageData.coins;
-        storage.Capacity = storageData.capacity;
+        storage.OilCapacity = storageData.capacity;
 
         oilTower.Oil = oilTowerData.oil;
         oilTower.Capacity = oilTowerData.capacity;
@@ -59,20 +114,22 @@ public class SaveManager : MonoBehaviour
         oilVillager.Capacity = oilVillagerData.capacity;
         oilVillager.TakeOilOnce = oilVillagerData.takeOilOnce;
         oilVillager.DropOilOnce = oilVillagerData.dropOilOnce;
+        oilVillager.Box = oilVillagerData.box;
         Vector3 oilVillagerPosition;
         oilVillagerPosition.x = oilVillagerData.position[0];
         oilVillagerPosition.y = oilVillagerData.position[1];
         oilVillagerPosition.z = oilVillagerData.position[2];
         oilVillager.transform.position = oilVillagerPosition;
 
+        shipVillager.SingleDelivery = shipVillagerData.singleDelivery;
+        shipVillager.CarryingCargo = shipVillagerData.carryingCargo;
+        shipVillager.TookCargo = shipVillagerData.tookCargo;
+        shipVillager.Box = shipVillagerData.box;
         Vector3 shipVillagerPosition;
         shipVillagerPosition.x = shipVillagerData.position[0];
         shipVillagerPosition.y = shipVillagerData.position[1];
         shipVillagerPosition.z = shipVillagerData.position[2];
         shipVillager.transform.position = shipVillagerPosition;
-        shipVillager.SingleDelivery = shipVillagerData.singleDelivery;
-        shipVillager.CarryingCargo = shipVillagerData.carryingCargo;
-        shipVillager.TookCargo = shipVillagerData.tookCargo;
         
         ship.SingleDelivery = shipData.singleDelivery;
         ship.ReadyToReturnToDocks = shipData.readyToReturnToDocks;
@@ -89,6 +146,7 @@ public class SaveManager : MonoBehaviour
         tradeMenu.ProfitCoins = tradeMenuData.coins;
         tradeMenu.ShipAway = tradeMenuData.shipAway;
         tradeMenu.CargoWaiting = tradeMenuData.cargoWaiting;
+        tradeMenu.SendShipButtonOff = tradeMenuData.sendShipButtonOff;
 
         upgradeMenu.OilLevelValue = upgradeMenuData.oilLevelValue;
         upgradeMenu.OilCapacityValue = upgradeMenuData.oilCapacityValue;

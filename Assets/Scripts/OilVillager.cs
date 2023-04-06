@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.AI;
@@ -14,6 +12,7 @@ public class OilVillager : MonoBehaviour
 
     [SerializeField] private Storage storage;
     [SerializeField] private OilTower oilTower;
+    [SerializeField] private OilVillagerAnimation villagerAnimation;
 
     [SerializeField] private GameObject carryingOilDisplay;
     [SerializeField] private GameObject speedDisplay;
@@ -26,7 +25,7 @@ public class OilVillager : MonoBehaviour
     private float _carryingOil;
     private bool _takeOilOnce;
     private bool _dropOilOnce;
-    
+    private bool _box;
     
     public int Speed
     {
@@ -58,6 +57,13 @@ public class OilVillager : MonoBehaviour
         set => _dropOilOnce = value;
     }
 
+    public bool Box
+    {
+        get => _box;
+        set => _box = value;
+    }
+
+
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -83,11 +89,21 @@ public class OilVillager : MonoBehaviour
             _navMeshAgent.destination = storageEntrance.position;
         }
 
+        if (_box)
+        {
+            villagerAnimation.box = true;
+        }
+        else
+        {
+            villagerAnimation.box = false;
+        }
+
         var towerDistance = Vector3.Distance(transform.position, oilTowerEntrance.position);
         var storageDistance = Vector3.Distance(transform.position, storageEntrance.position);
             
         if (towerDistance <= 0.1f && !_takeOilOnce)
         {
+            _box = true;
             if (oilTower.Oil >= carryingOilMax)
             {
                 oilTower.TakeOil(carryingOilMax);
@@ -106,9 +122,10 @@ public class OilVillager : MonoBehaviour
 
         if (storageDistance <= 0.1f && !_dropOilOnce)
         {
+            _box = false;
             if (_carryingOil > 0)
             {
-                if (_carryingOil + storage.Oil <= storage.Capacity)
+                if (_carryingOil + storage.Oil <= storage.OilCapacity)
                 {
                     storage.StoreOil(_carryingOil);
                     _carryingOil = 0;
@@ -117,8 +134,8 @@ public class OilVillager : MonoBehaviour
                 }
                 else
                 {
-                    _carryingOil -= storage.Capacity - storage.Oil;
-                    storage.StoreOil(storage.Capacity - storage.Oil);
+                    _carryingOil -= storage.OilCapacity - storage.Oil;
+                    storage.StoreOil(storage.OilCapacity - storage.Oil);
                     _dropOilOnce = true;
                     _takeOilOnce = false;
                 }

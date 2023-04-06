@@ -14,6 +14,7 @@ public class ObjectClicker : MonoBehaviour
     [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private OilTower oilTower;
+    [SerializeField] private TreasureChest treasureChest;
 
     private void Update()
     {
@@ -42,6 +43,11 @@ public class ObjectClicker : MonoBehaviour
             if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("OilClicker")))
             {
                 oilTower.ClickOil();
+            }
+            
+            if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("TreasureChest")))
+            {
+                treasureChest.GetReward();
             }
         }
     }

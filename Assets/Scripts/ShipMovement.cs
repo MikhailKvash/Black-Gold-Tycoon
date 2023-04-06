@@ -12,15 +12,16 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] private Storage storage;
     [SerializeField] private TradeMenu tradeMenu;
     [SerializeField] private TimeManager timeManager;
+    [SerializeField] private AudioManager audioManager;
     [SerializeField] private GameObject mapButton;
 
     private NavMeshAgent _navMeshAgent;
-    private bool _singleDelivery;
+    private bool _singleDelivery = true;
     private bool _readyToReturnToDocks;
 
-    private bool _goingAway;
-    private bool _goingToLastPoint;
-    private bool _goingDocks;
+    [SerializeField]private bool _goingAway;
+    [SerializeField]private bool _goingToLastPoint;
+    [SerializeField]private bool _goingDocks;
     
 
     public bool SingleDelivery
@@ -75,7 +76,7 @@ public class ShipMovement : MonoBehaviour
             _navMeshAgent.destination = dockingPosition.position;
         }
             
-        if (shipAwayDistance <= 0.3f)
+        if (shipAwayDistance <= 0.4f)
         {
             _goingAway = false;
             _goingToLastPoint = true;
@@ -98,6 +99,7 @@ public class ShipMovement : MonoBehaviour
             timeManager.PassedTime = 0;
             tradeMenu.ShipAway = false;
             tradeMenu.ResetTrading();
+            audioManager.Play("ShipLeaveAndReturn");
         }
     }
 
@@ -109,5 +111,6 @@ public class ShipMovement : MonoBehaviour
         _readyToReturnToDocks = false;
         tradeMenu.ShipAway = true;
         mapButton.SetActive(true);
+        audioManager.Play("ShipLeaveAndReturn");
     }
 }

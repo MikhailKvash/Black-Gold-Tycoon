@@ -2,11 +2,11 @@
 public class StorageData
 {
     public float oil;
-    public int fuel;
-    public int wood;
-    public int stone;
+    public float fuel;
+    public float wood;
+    public float stone;
     public float coins;
-    public int gems;
+    public float gems;
 
     public float capacity;
 
@@ -18,6 +18,6 @@ public class StorageData
         stone = storage.Stone;
         gems = storage.Gems;
         coins = storage.Coins;
-        capacity = storage.Capacity;
+        capacity = storage.OilCapacity;
     }
 }

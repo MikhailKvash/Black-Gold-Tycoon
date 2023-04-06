@@ -17,8 +17,8 @@ NavMeshProjectSettings:
     cost: 4
   - name: Fish
     cost: 5
-  - name: 
-    cost: 1
+  - name: Bird
+    cost: 6
   - name: 
     cost: 1
   - name: 

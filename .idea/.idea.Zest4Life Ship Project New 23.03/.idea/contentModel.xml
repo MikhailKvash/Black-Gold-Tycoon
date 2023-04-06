@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\mkvas\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\mkvas\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Zest4Life Ship Project New 23.03.2088286091.00" t="ExcludeRecursive" />
+    <e p="C:\Users\mkvas\Zest4Life Ship Project New 23.03" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Animations" t="Include" />
+        <e p="Assets" t="Include">
+          <e p="Models" t="Include" />
+          <e p="Textures" t="Include">
+            <e p="Animals" t="Include">
+              <e p="Materials" t="Include" />
+            </e>
+            <e p="Materials" t="Include" />
+          </e>
+        </e>
+        <e p="Prefabs" t="Include" />
+        <e p="Scenes" t="Include">
+          <e p="MainScene" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="AnimScripts" t="Include">
+            <e p="CarriedOilNumber.cs" t="Include" />
+            <e p="OilVillagerAnimation.cs" t="Include" />
+            <e p="ShipVillagerAnimation.cs" t="Include" />
+          </e>
+          <e p="Chicken.cs" t="Include" />
+          <e p="Fish.cs" t="Include" />
+          <e p="MainBuilding.cs" t="Include" />
+          <e p="Menu+Manager" t="Include">
+            <e p="AudioManager.cs" t="Include" />
+            <e p="FishSpawner.cs" t="Include" />
+            <e p="MapMenu.cs" t="Include" />
+            <e p="SettingsManager.cs" t="Include" />
+            <e p="ShipTimeManager.cs" t="Include" />
+            <e p="Sound.cs" t="Include" />
+            <e p="TradeMenu.cs" t="Include" />
+            <e p="UpgradeMenu.cs" t="Include" />
+          </e>
+          <e p="OilTower.cs" t="Include" />
+          <e p="OilVillager.cs" t="Include" />
+          <e p="SaveSystem" t="Include">
+            <e p="GameData" t="Include">
+              <e p="MainBuildingData.cs" t="Include" />
+              <e p="OilTowerData.cs" t="Include" />
+              <e p="OilVillagerData.cs" t="Include" />
+              <e p="ShipData.cs" t="Include" />
+              <e p="ShipTimerData.cs" t="Include" />
+              <e p="ShipVillagerData.cs" t="Include" />
+              <e p="StorageData.cs" t="Include" />
+              <e p="TradeMenuData.cs" t="Include" />
+              <e p="UpgradeMenuData.cs" t="Include" />
+            </e>
+            <e p="SaveManager.cs" t="Include" />
+            <e p="SaveSystem.cs" t="Include" />
+          </e>
+          <e p="ShipMovement.cs" t="Include" />
+          <e p="ShipVillager.cs" t="Include" />
+          <e p="Storage.cs" t="Include" />
+          <e p="TreasureChest.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="LevitatingIcons.cs" t="Include" />
+            <e p="ObjectClicker.cs" t="Include" />
+            <e p="TextMeshProLookAtCamera.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Sourse" t="Include">
+          <e p="A_anim" t="Include">
+            <e p="Materials" t="Include" />
+          </e>
+          <e p="M_Mesh" t="Include" />
+          <e p="Shader" t="Include">
+            <e p="UnityURPToonLitShaderExample-master" t="Include">
+              <e p="NiloInvLerpRemap.hlsl" t="Include" />
+              <e p="NiloOutlineUtil.hlsl" t="Include" />
+              <e p="NiloZOffset.hlsl" t="Include" />
+              <e p="SimpleURPToonLitOutlineExample.shader" t="Include" />
+              <e p="SimpleURPToonLitOutlineExample_LightingEquation.hlsl" t="Include" />
+              <e p="SimpleURPToonLitOutlineExample_Shared.hlsl" t="Include" />
+            </e>
+            <e p="URPOcean-master" t="Include">
+              <e p="Assets" t="Include">
+                <e p="Ocean" t="Include">
+                  <e p="FBuoyancyBody.cs" t="Include" />
+                  <e p="FBuoyancyPart.cs" t="Include" />
+                  <e p="GerstnerWavesJobs.cs" t="Include" />
+                  <e p="Interactive" t="Include">
+                    <e p="Scripts" t="Include">
+                      <e p="BoatFoamGenerator.cs" t="Include" />
+                      <e p="Controller.cs" t="Include" />
+                      <e p="WakeGenerator.cs" t="Include" />
+                      <e p="WaterFXFeature.cs" t="Include" />
+                      <e p="WaypointCircuit.cs" t="Include" />
+                      <e p="WaypointProgressTracker.cs" t="Include" />
+                    </e>
+                  </e>
+                  <e p="NeoNormalGrid.cs" t="Include" />
+                  <e p="NeoOcean.cs" t="Include" />
+                  <e p="NeoProjectedGrid.cs" t="Include" />
+                  <e p="NeoReflection.cs" t="Include" />
+                  <e p="ReCopyFeature.cs" t="Include" />
+                  <e p="Shader" t="Include">
+                    <e p="Fourier_L.shader" t="Include" />
+                    <e p="GerstnerWaves.hlsl" t="Include" />
+                    <e p="InitialSpectrum.shader" t="Include" />
+                    <e p="NeoInclude.hlsl" t="Include" />
+                    <e p="NeoOcean.shader" t="Include" />
+                    <e p="SpectrumFragment_L.shader" t="Include" />
+                    <e p="SunShaftsComposite.shader" t="Include" />
+                    <e p="Underwater.shader" t="Include" />
+                    <e p="WaterFXShader.shader" t="Include" />
+                    <e p="WaveEquation.shader" t="Include" />
+                    <e p="WaveWriter.shader" t="Include" />
+                  </e>
+                  <e p="SunShafts.cs" t="Include" />
+                  <e p="SunShaftsPass.cs" t="Include" />
+                  <e p="SunShaftsRenderFeature.cs" t="Include" />
+                  <e p="UnderwaterEffect.cs" t="Include" />
+                  <e p="WaterWaveRenderer.cs" t="Include" />
+                  <e p="WaveRenderer.cs" t="Include" />
+                  <e p="XCopyColorPass.cs" t="Include" />
+                  <e p="XCopyDepthPass.cs" t="Include" />
+                </e>
+                <e p="Resources" t="Include">
+                  <e p="BillingMode.json" t="Include" />
+                </e>
+                <e p="WaveSearch" t="Include">
+                  <e p="ProceduralCloud.shader" t="Include" />
+                  <e p="Scripts" t="Include">
+                    <e p="FPSDisplay.cs" t="Include" />
+                    <e p="MouseOrbit.cs" t="Include" />
+                  </e>
+                  <e p="WaveSearch" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Skybox" t="Include">
+            <e p="Cubemaps" t="Include" />
+            <e p="Materials" t="Include" />
+            <e p="Scene" t="Include" />
+          </e>
+          <e p="Sound" t="Include">
+            <e p="Дефицит нефти" t="Include" />
+            <e p="Звон  корабля" t="Include" />
+            <e p="Звуки меню" t="Include">
+              <e p="1 вариант" t="Include" />
+              <e p="2 вариант" t="Include" />
+            </e>
+            <e p="Игрок" t="Include">
+              <e p="Выпадение монет" t="Include">
+                <e p="Деньги.txt" t="Include" />
+              </e>
+              <e p="Перемещение корабля" t="Include">
+                <e p="1 вариант" t="Include" />
+                <e p="Более мультяшный" t="Include" />
+                <e p="Перемещение корабля.txt" t="Include" />
+              </e>
+              <e p="Сообщения" t="Include" />
+              <e p="Строительство вышки" t="Include" />
+              <e p="Улучшение строений" t="Include">
+                <e p="2 вариант" t="Include" />
+              </e>
+            </e>
+            <e p="Накачка нефтью" t="Include" />
+            <e p="Окружение" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="Other" t="Include" />
+            <e p="UI_sprite" t="Include">
+              <e p="подложка" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Documentation" t="Include" />
+          <e p="Examples &amp; Extras" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="Anton OFL.txt" t="Include" />
+              <e p="Bangers - OFL.txt" t="Include" />
+              <e p="Oswald-Bold - OFL.txt" t="Include" />
+            </e>
+            <e p="Materials" t="Include" />
+            <e p="Prefabs" t="Include" />
+            <e p="Resources" t="Include">
+              <e p="Color Gradient Presets" t="Include" />
+              <e p="Fonts &amp; Materials" t="Include" />
+              <e p="Sprite Assets" t="Include" />
+            </e>
+            <e p="Scenes" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="Benchmark01.cs" t="Include" />
+              <e p="Benchmark01_UGUI.cs" t="Include" />
+              <e p="Benchmark02.cs" t="Include" />
+              <e p="Benchmark03.cs" t="Include" />
+              <e p="Benchmark04.cs" t="Include" />
+              <e p="CameraController.cs" t="Include" />
+              <e p="ChatController.cs" t="Include" />
+              <e p="DropdownSample.cs" t="Include" />
+              <e p="EnvMapAnimator.cs" t="Include" />
+              <e p="ObjectSpin.cs" t="Include" />
+              <e p="ShaderPropAnimator.cs" t="Include" />
+              <e p="SimpleScript.cs" t="Include" />
+              <e p="SkewTextExample.cs" t="Include" />
+              <e p="TeleType.cs" t="Include" />
+              <e p="TextConsoleSimulator.cs" t="Include" />
+              <e p="TextMeshProFloatingText.cs" t="Include" />
+              <e p="TextMeshSpawner.cs" t="Include" />
+              <e p="TMP_DigitValidator.cs" t="Include" />
+              <e p="TMP_ExampleScript_01.cs" t="Include" />
+              <e p="TMP_FrameRateCounter.cs" t="Include" />
+              <e p="TMP_PhoneNumberValidator.cs" t="Include" />
+              <e p="TMP_TextEventCheck.cs" t="Include" />
+              <e p="TMP_TextEventHandler.cs" t="Include" />
+              <e p="TMP_TextInfoDebugTool.cs" t="Include" />
+              <e p="TMP_TextSelector_A.cs" t="Include" />
+              <e p="TMP_TextSelector_B.cs" t="Include" />
+              <e p="TMP_UiFrameRateCounter.cs" t="Include" />
+              <e p="TMPro_InstructionOverlay.cs" t="Include" />
+              <e p="VertexColorCycler.cs" t="Include" />
+              <e p="VertexJitter.cs" t="Include" />
+              <e p="VertexShakeA.cs" t="Include" />
+              <e p="VertexShakeB.cs" t="Include" />
+              <e p="VertexZoom.cs" t="Include" />
+              <e p="WarpTextExample.cs" t="Include" />
+            </e>
+            <e p="Sprites" t="Include" />
+            <e p="Textures" t="Include" />
+          </e>
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="Fonts &amp; Materials" t="Include" />
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Sprite Assets" t="Include" />
+            <e p="Style Sheets" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+            <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+            <e p="TMP_Bitmap.shader" t="Include" />
+            <e p="TMP_SDF Overlay.shader" t="Include" />
+            <e p="TMP_SDF SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+            <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+            <e p="TMP_SDF-Mobile SSD.shader" t="Include" />
+            <e p="TMP_SDF-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+            <e p="TMP_SDF-Surface.shader" t="Include" />
+            <e p="TMP_SDF.shader" t="Include" />
+            <e p="TMP_Sprite.shader" t="Include" />
+            <e p="TMPro.cginc" t="Include" />
+            <e p="TMPro_Mobile.cginc" t="Include" />
+            <e p="TMPro_Properties.cginc" t="Include" />
+            <e p="TMPro_Surface.cginc" t="Include" />
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
+            <e p="EmojiOne.json" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+      <e p="Zest4Life Ship Project New 23.03.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

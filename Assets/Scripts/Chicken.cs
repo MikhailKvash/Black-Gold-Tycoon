@@ -26,7 +26,7 @@ public class Chicken : MonoBehaviour
         
         _navMeshAgent.destination = _currentWaypoint[_randomWaypoint].position;
 
-        if (waypointDistance <= 0.1f)
+        if (waypointDistance <= 0.2f)
         {
             _randomWaypoint = Random.Range(0, 10);
             _navMeshAgent.destination = _currentWaypoint[_randomWaypoint].position;

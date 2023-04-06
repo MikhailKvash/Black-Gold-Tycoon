@@ -19,8 +19,9 @@ public class FishSpawner : MonoBehaviour
 
     IEnumerator SpawnFish()
     { 
-        _randomFishAmount = Random.Range(0, 2);
-        _randomSpawnPoint = Random.Range(0, 4);
+        _randomFishAmount = Random.Range(0, 3);
+        _randomSpawnPoint = Random.Range(0, 5);
+        
         switch (_randomFishAmount)
         {
             case 0:
