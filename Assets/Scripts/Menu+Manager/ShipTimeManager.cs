@@ -1,17 +1,20 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
+    [SerializeField] private SaveManager saveManager;
+    
     [SerializeField] private GameObject timeLeftDisplay;
     
-    [SerializeField] private int timeLeft;
+    [SerializeField] private float timeLeft;
     [SerializeField] private float neededTime;
     [SerializeField] private float passedTime;
     [SerializeField] private bool takingAway;
 
-    public int TimeLeft
+    public float TimeLeft
     {
         get => timeLeft;
         set => timeLeft = value;
@@ -44,6 +47,25 @@ public class TimeManager : MonoBehaviour
         StartCoroutine(ShipTimer());
         
         timeLeftDisplay.GetComponent<TextMeshProUGUI>().text = string.Format("Корабль вернётся через {0:00}:{1:00}", minutes, seconds);
+        
+        //if (!string.IsNullOrEmpty(saveManager.TimeWhenGameClosed))
+        //{
+        //    DateTime parsingTime = DateTime.Parse(saveManager.TimeWhenGameClosed);
+        //    TimeSpan passedSinceClosingTime = DateTime.Now - parsingTime;
+//
+        //    float passedSinceClosingShipTime = (float) passedSinceClosingTime.TotalSeconds + 0;
+//
+        //    if (timeLeft <= passedSinceClosingTime.TotalSeconds)
+        //    {
+        //        timeLeft = 0;
+        //        passedTime = neededTime;
+        //    }
+        //    else
+        //    {
+        //        timeLeft -= passedSinceClosingShipTime;
+        //        passedTime += passedSinceClosingShipTime;
+        //    }
+        //}
     }
 
     private void Update()
@@ -59,7 +81,7 @@ public class TimeManager : MonoBehaviour
         timeLeft += 90;
         neededTime = 90;
         StartCoroutine(ShipTimer());
-    }
+    }//
 
     public void EndShipTimer()
     {

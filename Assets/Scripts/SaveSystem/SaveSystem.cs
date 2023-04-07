@@ -112,6 +112,18 @@ public static class SaveSystem
         stream.Close();
     }
     
+    public static void SaveSaveManager(SaveManager saveManager)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/saveManager.sav";
+        FileStream stream = new FileStream(path, FileMode.Create);
+        
+        SaveManagerData data = new SaveManagerData(saveManager);
+        
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+    
     public static StorageData LoadStorage()
     {
         string path = Application.persistentDataPath + "/storage.sav";
@@ -241,6 +253,21 @@ public static class SaveSystem
             FileStream stream = new FileStream(path, FileMode.Open);
 
             TimeManagerData data = formatter.Deserialize(stream) as TimeManagerData;
+
+            stream.Close();
+            return data;
+        } else {return null;}
+    }
+    
+    public static SaveManagerData LoadSaveManager()
+    {
+        string path = Application.persistentDataPath + "/saveManager.sav";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            SaveManagerData data = formatter.Deserialize(stream) as SaveManagerData;
 
             stream.Close();
             return data;

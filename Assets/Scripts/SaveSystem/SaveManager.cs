@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -12,11 +13,19 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private TradeMenu tradeMenu;
     [SerializeField] private UpgradeMenu upgradeMenu;
     [SerializeField] private TimeManager timeManager;
+    [SerializeField] private SaveManager saveManager;
 
     [SerializeField] private GameObject noLoadingText;
-    private bool _noLoading;
     private int _noLoadingPref;
-    
+    private string _timeWhenGameClosed;
+    private bool _noLoading;
+
+    public string TimeWhenGameClosed
+    {
+        get => _timeWhenGameClosed;
+        set => _timeWhenGameClosed = value;
+    }
+
     private void Start()
     {
         _noLoadingPref = PlayerPrefs.GetInt("NoLoading");
@@ -58,12 +67,14 @@ public class SaveManager : MonoBehaviour
     {
         if (isPaused)
         {
+            _timeWhenGameClosed = DateTime.Now.ToString();
             SaveProgress();
         }
     }
 
     private void OnApplicationQuit()
     {
+        _timeWhenGameClosed = DateTime.Now.ToString();
         SaveProgress();
     }
 
@@ -78,6 +89,7 @@ public class SaveManager : MonoBehaviour
         SaveSystem.SaveTradeMenu(tradeMenu);
         SaveSystem.SaveUpgradeMenu(upgradeMenu);
         SaveSystem.SaveTimeManager(timeManager);
+        SaveSystem.SaveSaveManager(saveManager);
     }
 
     public void LoadProgress()
@@ -91,6 +103,7 @@ public class SaveManager : MonoBehaviour
         TradeMenuData tradeMenuData = SaveSystem.LoadTradeMenu();
         UpgradeMenuData upgradeMenuData = SaveSystem.LoadUpgradeMenu();
         TimeManagerData timeManagerData = SaveSystem.LoadTimeManager();
+        SaveManagerData saveManagerData = SaveSystem.LoadSaveManager();
         
 
         storage.Oil = storageData.oil;
@@ -159,5 +172,7 @@ public class SaveManager : MonoBehaviour
         timeManager.NeededTime = timeManagerData.neededTime;
         timeManager.PassedTime = timeManagerData.passedTime;
         timeManager.TakingAway = timeManagerData.takingAway;
+
+        saveManager.TimeWhenGameClosed = saveManagerData.timeWhenGameClosed;
     }
 }

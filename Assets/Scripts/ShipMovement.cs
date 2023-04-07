@@ -19,9 +19,9 @@ public class ShipMovement : MonoBehaviour
     private bool _singleDelivery = true;
     private bool _readyToReturnToDocks;
 
-    [SerializeField]private bool _goingAway;
-    [SerializeField]private bool _goingToLastPoint;
-    [SerializeField]private bool _goingDocks;
+    [SerializeField] private bool _goingAway;
+    [SerializeField] private bool _goingToLastPoint;
+    [SerializeField] private bool _goingDocks;
     
 
     public bool SingleDelivery

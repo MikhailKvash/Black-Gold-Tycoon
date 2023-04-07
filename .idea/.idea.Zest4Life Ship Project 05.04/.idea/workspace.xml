@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e2bb8ea3-9588-4e40-912f-71c8fefeb3cd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/projectSettingsUpdater.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Zest4Life Ship Project New 20.03/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/Animals/chicken.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/Animals/chicken.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/Animals/fish.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/Animals/fish.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_barn.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_barn.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_barn.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_barn.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_boat.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_boat.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_boat.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_boat.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_bridge.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_bridge.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_bridge.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_bridge.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_1.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_1.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_1.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_1.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_2.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_2.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_2.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_2.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_3.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_3.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_3.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_house_3.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_island.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_island.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_island.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_island.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_jetty.002_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_jetty.002_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_jetty.002_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_jetty.002_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_mail_building.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_mail_building.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_mail_building.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_mail_building.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_oil_derrick.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_oil_derrick.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_oil_derrick.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_oil_derrick.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_road_rocks.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_road_rocks.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_road_rocks.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_road_rocks.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_stuff.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_stuff.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_stuff.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_stuff.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_trees.001_AO.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_trees.001_AO.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_trees.001_BaseColor.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Assets/Textures/main_scene_trees.001_BaseColor.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Fish.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Fish.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Chicken.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Chicken.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Fish.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Fish.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MainBuilding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/FishSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/FishSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/MapMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/MapMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/SettingsManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/SettingsManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TimeManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TimeManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TradeMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TradeMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/UpgradeMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/UpgradeMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/OilVillager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/OilVillager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/OilVillagerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/OilVillagerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ShipVillagerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ShipVillagerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/StorageData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/StorageData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TimerData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TimerData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TradeMenuData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TradeMenuData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShipMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShipMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ShipVillager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ShipVillager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Storage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Storage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectClicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ObjectClicker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sourse/M_Mesh/Fish_anim_flop 2.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sourse/M_Mesh/Fish_anim_flop 2.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sourse/M_Mesh/Fish_anim_flop 2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sourse/M_Mesh/Fish_anim_flop 2.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sourse/M_Mesh/kura_textures.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sourse/M_Mesh/kura_textures.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/SaveManagerData.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/MainBuilding.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/MainBuildingData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/SaveManagerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ShipTimerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ShipMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/ShipTimeManager.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2O6QSjklfir2DMkmCqjd7vEv74d" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e2bb8ea3-9588-4e40-912f-71c8fefeb3cd" name="Default Changelist" comment="" />
+      <created>1680878559862</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680878559862</updated>
+      <workItem from="1680878579883" duration="2619000" />
+      <workItem from="1680882737108" duration="4196000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

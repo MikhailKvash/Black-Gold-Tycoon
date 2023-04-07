@@ -14,8 +14,9 @@ public class OilTower : MonoBehaviour
     [SerializeField] private GameObject oilTowerCapacityDisplay;
     
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private SaveManager saveManager;
     [SerializeField] private Slider oilFillSlider;
-
+    
     [SerializeField] private float oil;
     [SerializeField] private float oilMax;
     [SerializeField] private float timeToGenerateOil;
@@ -60,6 +61,26 @@ public class OilTower : MonoBehaviour
     private void Start()
     {
         StartCoroutine(GenerateOil());
+        
+        if (!string.IsNullOrEmpty(saveManager.TimeWhenGameClosed))
+        {
+            DateTime parsingTime = DateTime.Parse(saveManager.TimeWhenGameClosed);
+            TimeSpan passedTime = DateTime.Now - parsingTime;
+
+            int generatedOil = (int) (passedTime.TotalSeconds / timeToGenerateOil);
+
+            if (oil < oilMax)
+            {
+                if (oil + generatedOil > oilMax)
+                {
+                    oil = oilMax;
+                }
+                else
+                {
+                    oil += generatedOil;
+                }
+            }
+        }
     }
 
     private void Update()
@@ -108,7 +129,7 @@ public class OilTower : MonoBehaviour
         {
             if (oil + oilLevel > oilMax)
             {
-                oil += oilMax - oil;
+                oil = oilMax;
             }
             else
             {

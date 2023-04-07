@@ -1,7 +1,7 @@
 [System.Serializable]
 public class TimeManagerData
 {
-    public int timeLeft;
+    public float timeLeft;
     public float neededTime;
     public float passedTime;
     public bool takingAway;
