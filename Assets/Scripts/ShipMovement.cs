@@ -81,7 +81,7 @@ public class ShipMovement : MonoBehaviour
             _goingAway = false;
             _goingToLastPoint = true;
         }
-        if (preDockingDistance <= 0.3f)
+        if (preDockingDistance <= 0.4f)
         {
             _goingToLastPoint = false;
             _singleDelivery = false;
