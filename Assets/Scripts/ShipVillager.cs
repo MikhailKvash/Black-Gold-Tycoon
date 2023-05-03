@@ -69,7 +69,6 @@ public class ShipVillager : MonoBehaviour
         {
             _box = true;
             _tookCargo = true;
-            tradeMenu.CargoWaiting = false;
         }
         if (shipDistance <= 0.2f && !_singleDelivery)
         {

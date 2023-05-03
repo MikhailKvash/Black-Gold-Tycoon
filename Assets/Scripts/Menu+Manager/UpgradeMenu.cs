@@ -15,6 +15,7 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private GameObject upgradeStorageCapacityButton;
     
     [SerializeField] private GameObject upgradeMainBuildingLevelText;
+    [SerializeField] private GameObject upgradeStorageCapacityText;
 
     [SerializeField] private OilTower oilTower;
     [SerializeField] private OilVillager oilCarrier;
@@ -64,11 +65,20 @@ public class UpgradeMenu : MonoBehaviour
 
     private void Update()
     {
+        if (storage.OilCapacity < 60)
+        {
+            upgradeStorageCapacityText.GetComponent<TextMeshProUGUI>().text = "Хранилище\n" + _storageCapacityValue;
+        }
+        else
+        {
+            upgradeStorageCapacityText.GetComponent<TextMeshProUGUI>().text = "Максимальное\nхранилище!";
+            upgradeStorageCapacityButton.SetActive(false);
+        }
+
         upgradeOilLevelButton.GetComponent<TextMeshProUGUI>().text = "Скорость\n" + _oilLevelValue;
         upgradeOilCapacityButton.GetComponent<TextMeshProUGUI>().text = "Хранилище вышки\n" + _oilCapacityValue;
         upgradeCarrierSpeedButton.GetComponent<TextMeshProUGUI>().text = "Скорость\n" + _carrierSpeedValue;
         upgradeCarrierCapacityButton.GetComponent<TextMeshProUGUI>().text = "Объём\n" + _carrierCapacityValue;
-        upgradeStorageCapacityButton.GetComponent<TextMeshProUGUI>().text = "Хранилище\n" + _storageCapacityValue;
         upgradeMainBuildingLevelText.GetComponent<TextMeshProUGUI>().text = "Уровень\n" + _mainBuildingLevelValue;
     }
 
@@ -138,9 +148,12 @@ public class UpgradeMenu : MonoBehaviour
 
     public void UpgradeStorageCapacity()
     {
-        if (storage.Coins > _storageCapacityValue)
+        if (storage.Coins > _storageCapacityValue || storage.OilCapacity == 60)
         {
             storage.OilCapacity += 10;
+            storage.FuelCapacity += 10;
+            storage.WoodCapacity += 10;
+            storage.StoneCapacity += 10;
             storage.Coins -= _storageCapacityValue;
             _storageCapacityValue = (int)(_storageCapacityValue * _valueMultiplier);
             audioManager.Play("Upgrade");

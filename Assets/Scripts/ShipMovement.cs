@@ -5,9 +5,9 @@ public class ShipMovement : MonoBehaviour
 {
     // Launches ship through waypoints, returns in to docks after delay timer, adds new coins and oil to storage
     
+    [SerializeField] private Transform dockingPosition;
     [SerializeField] private Transform shipAwayTarget;
     [SerializeField] private Transform preDockingPosition;
-    [SerializeField] private Transform dockingPosition;
 
     [SerializeField] private Storage storage;
     [SerializeField] private TradeMenu tradeMenu;
@@ -19,9 +19,9 @@ public class ShipMovement : MonoBehaviour
     private bool _singleDelivery = true;
     private bool _readyToReturnToDocks;
 
-    [SerializeField] private bool _goingAway;
-    [SerializeField] private bool _goingToLastPoint;
-    [SerializeField] private bool _goingDocks;
+    private bool _goingAway;
+    private bool _goingToLastPoint;
+    private bool _goingDocks;
     
 
     public bool SingleDelivery

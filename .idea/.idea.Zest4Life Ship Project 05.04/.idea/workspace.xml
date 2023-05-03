@@ -118,8 +118,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ShipTimerData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/ShipTimeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShipMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/ShipTimeManager.cs" />
       </list>
     </option>
   </component>
@@ -165,7 +165,6 @@
       <updated>1680878559862</updated>
       <workItem from="1680878579883" duration="2619000" />
       <workItem from="1680882737108" duration="4196000" />
-      <workItem from="1680888859881" duration="618000" />
     </task>
     <servers />
   </component>

@@ -8,6 +8,7 @@ public class ObjectClicker : MonoBehaviour
     [SerializeField] private GameObject oilTowerMenu;
     [SerializeField] private GameObject storageMenu;
     [SerializeField] private GameObject docksMenu;
+    [SerializeField] private GameObject BuyingMenu;
     [SerializeField] private GameObject mapMenu;
     [SerializeField] private GameObject settingsMenu;
 
@@ -61,6 +62,7 @@ public class ObjectClicker : MonoBehaviour
         oilTowerMenu.SetActive(false);
         storageMenu.SetActive(false);
         docksMenu.SetActive(false);
+        BuyingMenu.SetActive(false);
         mapMenu.SetActive(false);
         settingsMenu.SetActive(false);
     }

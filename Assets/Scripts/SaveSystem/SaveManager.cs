@@ -112,7 +112,10 @@ public class SaveManager : MonoBehaviour
         storage.Wood = storageData.wood;
         storage.Gems = storageData.gems;
         storage.Coins = storageData.coins;
-        storage.OilCapacity = storageData.capacity;
+        storage.OilCapacity = storageData.oilCapacity;
+        storage.FuelCapacity = storageData.fuelCapacity;
+        storage.WoodCapacity = storageData.woodCapacity;
+        storage.StoneCapacity = storageData.stoneCapacity;
 
         oilTower.Oil = oilTowerData.oil;
         oilTower.Capacity = oilTowerData.capacity;
@@ -158,8 +161,9 @@ public class SaveManager : MonoBehaviour
         tradeMenu.OilAmount = tradeMenuData.oil;
         tradeMenu.ProfitCoins = tradeMenuData.coins;
         tradeMenu.ShipAway = tradeMenuData.shipAway;
-        tradeMenu.CargoWaiting = tradeMenuData.cargoWaiting;
+        tradeMenu.SentForCargo = tradeMenuData.sentForCargo;
         tradeMenu.SendShipButtonOff = tradeMenuData.sendShipButtonOff;
+        tradeMenu.SliderHandleOff = tradeMenuData.sliderHandleOff;
 
         upgradeMenu.OilLevelValue = upgradeMenuData.oilLevelValue;
         upgradeMenu.OilCapacityValue = upgradeMenuData.oilCapacityValue;

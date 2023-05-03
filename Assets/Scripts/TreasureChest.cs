@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class TreasureChest : MonoBehaviour
 {
     [SerializeField] private Storage storage;
+    [SerializeField] private GameObject readyIcon;
     [SerializeField] private GameObject timerText;
     [SerializeField] private Animator treasureAnimator;
     
@@ -38,10 +39,12 @@ public class TreasureChest : MonoBehaviour
         if (DateTime.Now.Date > lastClicked.Date)
         {
             treasureAnimator.SetBool("Ready", true);
+            readyIcon.SetActive(true);
         }
         else
         {
             treasureAnimator.SetBool("Ready", false);
+            readyIcon.SetActive(false);
         }
     }
 

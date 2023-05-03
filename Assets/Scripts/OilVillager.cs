@@ -13,8 +13,7 @@ public class OilVillager : MonoBehaviour
     [SerializeField] private Storage storage;
     [SerializeField] private OilTower oilTower;
     [SerializeField] private OilVillagerAnimation villagerAnimation;
-
-    [SerializeField] private GameObject carryingOilDisplay;
+    
     [SerializeField] private GameObject speedDisplay;
     [SerializeField] private GameObject oilCapacityDisplay;
     
@@ -72,7 +71,6 @@ public class OilVillager : MonoBehaviour
     private void Update()
     {
         GetComponent<NavMeshAgent>().speed = speed;
-        carryingOilDisplay.GetComponent<TextMeshProUGUI>().text = "Переносимая нефть: " + _carryingOil + " / " + carryingOilMax;
         speedDisplay.GetComponent<TextMeshProUGUI>().text = "Скорость: " + speed;
         oilCapacityDisplay.GetComponent<TextMeshProUGUI>().text = "Объём: " + carryingOilMax;
 

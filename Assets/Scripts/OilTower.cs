@@ -8,7 +8,6 @@ public class OilTower : MonoBehaviour
 {
     // Generates oil automatically, stores it and shows amount in menu.
     
-    [SerializeField] private GameObject oilDisplay;
     [SerializeField] private GameObject oilTowerLevelDisplay;
     [SerializeField] private GameObject oilTowerSpeedDisplay;
     [SerializeField] private GameObject oilTowerCapacityDisplay;
@@ -91,11 +90,10 @@ public class OilTower : MonoBehaviour
         {
             _passedTimeToFillSlider = 0;
         }
-
-        oilDisplay.GetComponent<TextMeshProUGUI>().text = "Нефть в вышке: " + oil + " / " + oilMax;
+        
         oilTowerLevelDisplay.GetComponent<TextMeshProUGUI>().text = oilLevel + " ";
         oilTowerSpeedDisplay.GetComponent<TextMeshProUGUI>().text = oilLevel + " ед в " + timeToGenerateOil + " секунд";
-        oilTowerCapacityDisplay.GetComponent<TextMeshProUGUI>().text = "Хранилище: " + oilMax;
+        oilTowerCapacityDisplay.GetComponent<TextMeshProUGUI>().text = oil + " из " + oilMax;
     }
 
     public void TakeOil(float value)

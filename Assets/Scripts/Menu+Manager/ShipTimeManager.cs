@@ -80,7 +80,7 @@ public class TimeManager : MonoBehaviour
         timeLeft += 90;
         neededTime = 90;
         StartCoroutine(ShipTimer());
-    }
+    }//
 
     public void EndShipTimer()
     {
