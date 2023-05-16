@@ -3,7 +3,6 @@ public partial class OilVillagerData
 {
     public float carryingOil;
     public float[] position;
-    public int speed;
     public int capacity;
     public bool takeOilOnce;
     public bool dropOilOnce;
@@ -12,7 +11,6 @@ public partial class OilVillagerData
     public OilVillagerData(OilVillager oilVillager)
     {
         carryingOil = oilVillager.CarryingOil;
-        speed = oilVillager.Speed;
         capacity = oilVillager.Capacity;
         takeOilOnce = oilVillager.TakeOilOnce;
         dropOilOnce = oilVillager.DropOilOnce;

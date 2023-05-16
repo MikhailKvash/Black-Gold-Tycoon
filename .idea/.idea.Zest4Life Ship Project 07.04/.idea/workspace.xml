@@ -8,27 +8,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu+Manager/XpRPManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu+Manager/DeliverResourcesTimer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ResourceShipData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/BuyingMenuData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ResourcesTimerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ResourceShip.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/XpRpData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/ShipTimeManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/OilVillager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/StorageData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/UpgradeMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TreasureChest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShipVillager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Storage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TradeMenuData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ObjectClicker.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TradeMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuyingMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ResourceShipData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/ResourcesTimerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/TradeMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/TradeMenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/BuyingMenuData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/BuyingMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShipMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/XpRpData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/XpRPManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/ShipTimeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/DeliverResourcesTimer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ResourceShip.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TreasureChest.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Storage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/StartingMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/OilVillagerData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/GameData/UpgradeMenuData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/UpgradeMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/OilVillager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/AnimScripts/CarriedOilNumber.cs" />
       </list>
     </option>
   </component>
@@ -41,6 +58,7 @@
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -77,6 +95,13 @@
       <workItem from="1681649597536" duration="4826000" />
       <workItem from="1683035760860" duration="1779000" />
       <workItem from="1683046625153" duration="61000" />
+      <workItem from="1683202627334" duration="6683000" />
+      <workItem from="1683896343042" duration="7019000" />
+      <workItem from="1683990905234" duration="4013000" />
+      <workItem from="1683998512653" duration="6037000" />
+      <workItem from="1684170133924" duration="7587000" />
+      <workItem from="1684240703658" duration="12497000" />
+      <workItem from="1684255635104" duration="362000" />
     </task>
     <servers />
   </component>
@@ -87,5 +112,15 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="461" y="160" key="SettingsEditor" timestamp="1683896480040">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="461" y="160" key="SettingsEditor/0.0.1920.1032@0.0.1920.1032" timestamp="1683896480040" />
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup" timestamp="1683902487665">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="623" y="223" width="672" height="678" key="search.everywhere.popup/0.0.1920.1032@0.0.1920.1032" timestamp="1683902487665" />
   </component>
 </project>

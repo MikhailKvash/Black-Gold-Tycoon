@@ -76,6 +76,18 @@ public static class SaveSystem
         stream.Close();
     }
     
+    public static void SaveResourceShip(ResourceShip resourceShip)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/resourceShip.sav";
+        FileStream stream = new FileStream(path, FileMode.Create);
+        
+        ResourceShipData data = new ResourceShipData(resourceShip);
+        
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+    
     public static void SaveTradeMenu(TradeMenu tradeMenu)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -83,6 +95,18 @@ public static class SaveSystem
         FileStream stream = new FileStream(path, FileMode.Create);
         
         TradeMenuData data = new TradeMenuData(tradeMenu);
+        
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+    
+    public static void SaveBuyingMenu(BuyingMenu buyingMenu)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/buyingMenu.sav";
+        FileStream stream = new FileStream(path, FileMode.Create);
+        
+        BuyingMenuData data = new BuyingMenuData(buyingMenu);
         
         formatter.Serialize(stream, data);
         stream.Close();
@@ -107,6 +131,30 @@ public static class SaveSystem
         FileStream stream = new FileStream(path, FileMode.Create);
         
         TimeManagerData data = new TimeManagerData(timeManager);
+        
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+    
+    public static void SaveDeliverResourcesTimer(DeliverResourcesTimer resourcesTimer)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/resourcesTimer.sav";
+        FileStream stream = new FileStream(path, FileMode.Create);
+        
+        ResourcesTimerData data = new ResourcesTimerData(resourcesTimer);
+        
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+    
+    public static void SaveXpRpManager(XpRpManager xpRpManager)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/xpRpManager.sav";
+        FileStream stream = new FileStream(path, FileMode.Create);
+        
+        XpRpData data = new XpRpData(xpRpManager);
         
         formatter.Serialize(stream, data);
         stream.Close();
@@ -214,6 +262,21 @@ public static class SaveSystem
         } else {return null;}
     }
     
+    public static ResourceShipData LoadResourceShip()
+    {
+        string path = Application.persistentDataPath + "/resourceShip.sav";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            ResourceShipData data = formatter.Deserialize(stream) as ResourceShipData;
+
+            stream.Close();
+            return data;
+        } else {return null;}
+    }
+    
     public static TradeMenuData LoadTradeMenu()
     {
         string path = Application.persistentDataPath + "/tradeMenu.sav";
@@ -223,6 +286,21 @@ public static class SaveSystem
             FileStream stream = new FileStream(path, FileMode.Open);
 
             TradeMenuData data = formatter.Deserialize(stream) as TradeMenuData;
+
+            stream.Close();
+            return data;
+        } else {return null;}
+    }
+    
+    public static BuyingMenuData LoadBuyingMenu()
+    {
+        string path = Application.persistentDataPath + "/buyingMenu.sav";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            BuyingMenuData data = formatter.Deserialize(stream) as BuyingMenuData;
 
             stream.Close();
             return data;
@@ -253,6 +331,36 @@ public static class SaveSystem
             FileStream stream = new FileStream(path, FileMode.Open);
 
             TimeManagerData data = formatter.Deserialize(stream) as TimeManagerData;
+
+            stream.Close();
+            return data;
+        } else {return null;}
+    }
+    
+    public static ResourcesTimerData LoadDeliverResourcesTimer()
+    {
+        string path = Application.persistentDataPath + "/resourcesTimer.sav";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            ResourcesTimerData data = formatter.Deserialize(stream) as ResourcesTimerData;
+
+            stream.Close();
+            return data;
+        } else {return null;}
+    }
+    
+    public static XpRpData LoadXpRpManager()
+    {
+        string path = Application.persistentDataPath + "/xpRpManager.sav";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            XpRpData data = formatter.Deserialize(stream) as XpRpData;
 
             stream.Close();
             return data;

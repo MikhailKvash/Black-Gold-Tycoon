@@ -13,55 +13,45 @@ public class OilVillager : MonoBehaviour
     [SerializeField] private Storage storage;
     [SerializeField] private OilTower oilTower;
     [SerializeField] private OilVillagerAnimation villagerAnimation;
+    [SerializeField] private CarriedOilNumber carriedOilNumber;
     
-    [SerializeField] private GameObject speedDisplay;
     [SerializeField] private GameObject oilCapacityDisplay;
     
     [SerializeField] private int carryingOilMax;
-    [SerializeField] private int speed;
 
     private NavMeshAgent _navMeshAgent;
     private float _carryingOil;
     private bool _takeOilOnce;
     private bool _dropOilOnce;
     private bool _box;
-    
-    public int Speed
-    {
-        get => speed;
-        set => speed = value;
-    }
 
+    #region Public links
     public int Capacity
     {
         get => carryingOilMax;
         set => carryingOilMax = value;
     }
-
     public float CarryingOil
     {
         get => _carryingOil;
         set => _carryingOil = value;
     }
-
     public bool TakeOilOnce
     {
         get => _takeOilOnce;
         set => _takeOilOnce = value;
     }
-
     public bool DropOilOnce
     {
         get => _dropOilOnce;
         set => _dropOilOnce = value;
     }
-
     public bool Box
     {
         get => _box;
         set => _box = value;
     }
-
+    #endregion
 
     private void Awake()
     {
@@ -70,17 +60,15 @@ public class OilVillager : MonoBehaviour
     
     private void Update()
     {
-        GetComponent<NavMeshAgent>().speed = speed;
-        speedDisplay.GetComponent<TextMeshProUGUI>().text = "Скорость: " + speed;
-        oilCapacityDisplay.GetComponent<TextMeshProUGUI>().text = "Объём: " + carryingOilMax;
+        oilCapacityDisplay.GetComponent<TextMeshProUGUI>().text = "Уносит за раз: " + carryingOilMax;
 
         if (storage.OilFull)
         {
             _navMeshAgent.destination = storageFullWaitSpot.position;
         }
-        else if (_carryingOil <= 0 && oilTower.Oil > 0)
+        else if (_carryingOil <= 0 && oilTower.Oil >= 1)
         {
-            _navMeshAgent.destination = oilTowerEntrance.position;
+            _navMeshAgent.destination = oilTowerEntrance.position; 
         }
         else if (_carryingOil > 0)
         {
@@ -99,7 +87,7 @@ public class OilVillager : MonoBehaviour
         var towerDistance = Vector3.Distance(transform.position, oilTowerEntrance.position);
         var storageDistance = Vector3.Distance(transform.position, storageEntrance.position);
             
-        if (towerDistance <= 0.1f && !_takeOilOnce)
+        if (towerDistance <= 0.3f && !_takeOilOnce)
         {
             _box = true;
             if (oilTower.Oil >= carryingOilMax)
@@ -111,14 +99,18 @@ public class OilVillager : MonoBehaviour
             }
             else
             {
-                _carryingOil += oilTower.Oil; 
-                oilTower.TakeOil(oilTower.Oil);
+                float wholeOilAmount = Mathf.Floor(oilTower.Oil);
+                _carryingOil += wholeOilAmount;
+                oilTower.TakeOil(wholeOilAmount);
                 _takeOilOnce = true;
                 _dropOilOnce = false;
             }
+
+            carriedOilNumber.CarriedOilNumber1 = _carryingOil;
+            carriedOilNumber.SingleDelivery = false;
         }
 
-        if (storageDistance <= 0.1f && !_dropOilOnce)
+        if (storageDistance <= 0.3f && !_dropOilOnce)
         {
             _box = false;
             if (_carryingOil > 0)

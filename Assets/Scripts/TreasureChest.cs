@@ -2,17 +2,27 @@ using System;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.Collections;
 
 public class TreasureChest : MonoBehaviour
 {
     [SerializeField] private Storage storage;
+    [SerializeField] private XpRpManager xpRpManager;
+    [SerializeField] private AudioManager audioManager;
+    
     [SerializeField] private GameObject readyIcon;
     [SerializeField] private GameObject timerText;
     [SerializeField] private Animator treasureAnimator;
     
+    [SerializeField] private GameObject resourcesDisplay;
+    [SerializeField] private GameObject fuelDisplay;
+    [SerializeField] private GameObject stoneDisplay;
+    [SerializeField] private GameObject woodDisplay;
+    [SerializeField] private GameObject coinsDisplay;
+    [SerializeField] private GameObject gemsDisplay;
+
     private DateTime lastClicked;
     
-    private float _oilReward;
     private float _fuelReward;
     private float _woodReward;
     private float _stoneReward;
@@ -46,15 +56,15 @@ public class TreasureChest : MonoBehaviour
             treasureAnimator.SetBool("Ready", false);
             readyIcon.SetActive(false);
         }
+        
     }
 
     public void SetReward()
     {
-        _oilReward = Random.Range(1,5);
-        _fuelReward = Random.Range(1,5);
-        _woodReward = Random.Range(1,5);
-        _stoneReward = Random.Range(1,5);
-        _coinsReward = Random.Range(100,2000);
+        _fuelReward = Random.Range(0, 2);
+        _woodReward = Random.Range(1,11);
+        _stoneReward = Random.Range(1,11);
+        _coinsReward = Random.Range(500,4000);
         _gemsReward = Random.Range(1,3);
     }
     
@@ -62,11 +72,10 @@ public class TreasureChest : MonoBehaviour
     {
         TimeSpan timeSinceLastClicked = DateTime.Now - lastClicked;
         TimeSpan timeUntilNextClick = TimeSpan.FromDays(1) - timeSinceLastClicked;
-
+    
         if (DateTime.Now.Date > lastClicked.Date || lastClicked == DateTime.MinValue)
         {
-            if (_oilReward + storage.Oil <= storage.OilCapacity) { storage.Oil += _oilReward; }
-            else { storage.Oil += storage.OilCapacity - storage.Oil; }
+            StartCoroutine(ResourcesAppear());
             
             if (_fuelReward + storage.Fuel <= storage.FuelCapacity) { storage.Fuel += _fuelReward; }
             else { storage.Fuel += storage.FuelCapacity - storage.Fuel; }
@@ -80,14 +89,24 @@ public class TreasureChest : MonoBehaviour
             storage.Coins += _coinsReward;
             storage.Gems += _gemsReward;
             
+            xpRpManager.Xp += 0.1f;
+            
             lastClicked = DateTime.Now;
             PlayerPrefs.SetString("TreasureChestLastClicked", lastClicked.ToString());
-            SetReward();
+            
+            fuelDisplay.GetComponent<TextMeshProUGUI>().text = "" + _fuelReward;
+            stoneDisplay.GetComponent<TextMeshProUGUI>().text = "" + _stoneReward;
+            woodDisplay.GetComponent<TextMeshProUGUI>().text = "" + _woodReward;
+            coinsDisplay.GetComponent<TextMeshProUGUI>().text = "" + _coinsReward;
+            gemsDisplay.GetComponent<TextMeshProUGUI>().text = "" + _gemsReward;
+            
+            audioManager.Play("TreasureChest");
         }
         else
         {
             timerText.GetComponent<TextMeshProUGUI>().text = "Сундук будет доступен через " + timeUntilNextClick.ToString(@"hh\:mm\:ss");;
             timerText.GetComponent<Animation>().Play("NotEnoughTradeAnim");
+            audioManager.Play("NotEnough");
         }
     }
 
@@ -95,5 +114,13 @@ public class TreasureChest : MonoBehaviour
     {
         lastClicked = DateTime.MinValue;
         PlayerPrefs.SetString("TreasureChestLastClicked", lastClicked.ToString());
+    }
+    
+    private IEnumerator ResourcesAppear ()
+    {
+        resourcesDisplay.SetActive(true);
+        yield return new WaitForSeconds(3f);
+        resourcesDisplay.SetActive(false);
+        SetReward();
     }
 }

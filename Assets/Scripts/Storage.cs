@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Serialization;
 
 public class Storage : MonoBehaviour
 {
-    // Stores resourses and shows amounts in menu.
+    // Stores resources and shows amounts in menu.
     
     [SerializeField] private float oil;
     [SerializeField] private float fuel;
@@ -37,6 +36,7 @@ public class Storage : MonoBehaviour
 
     private bool _oilCapacityFull;
 
+    #region Public links
     public float Oil
     {
         get => oil;
@@ -45,77 +45,79 @@ public class Storage : MonoBehaviour
             oil = (float) Math.Round(value, 1);
         }
     }
-    
     public float Fuel
     {
         get => fuel;
         set => fuel = value;
     }
-    
     public float Wood
     {
         get => wood;
         set => wood = value;
     }
-
     public float Stone
     {
         get => stone;
         set => stone = value;
     }
-    
     public float Coins
     {
         get => coins;
         set => coins = value;
     }
-
     public float Gems
     {
         get => gems;
         set => gems = value;
     }
-    
     public float OilCapacity
     {
         get => oilCapacity;
         set => oilCapacity = value;
     }
-
     public float FuelCapacity
     {
         get => fuelCapacity;
         set => fuelCapacity = value;
     }
-
     public float WoodCapacity
     {
         get => woodCapacity;
         set => woodCapacity = value;
     }
-
     public float StoneCapacity
     {
         get => stoneCapacity;
         set => stoneCapacity = value;
     }
-
     public bool OilFull => _oilCapacityFull;
-
+    #endregion
+    
     private void Update()
     {
+        string formattedCoins;
+        if (coins >= 100000f)
+        {
+            int thousands = Mathf.FloorToInt(coins / 1000f);
+            formattedCoins = $"{thousands} т.";
+        }
+        else
+        {
+            formattedCoins = coins.ToString("F0");
+        }
+
         fuelDisplay.GetComponent<TextMeshProUGUI>().text = fuel.ToString();
         oilDisplay.GetComponent<TextMeshProUGUI>().text = oil.ToString();
         stoneDisplay.GetComponent<TextMeshProUGUI>().text = stone.ToString();
         woodDisplay.GetComponent<TextMeshProUGUI>().text = wood.ToString();
-        coinsDisplay.GetComponent<TextMeshProUGUI>().text = coins.ToString();
+        coinsDisplay.GetComponent<TextMeshProUGUI>().text = formattedCoins;
         gemsDisplay.GetComponent<TextMeshProUGUI>().text = gems.ToString();
         
         fuelStorageDisplay.GetComponent<TextMeshProUGUI>().text = fuel.ToString();
         oilStorageDisplay.GetComponent<TextMeshProUGUI>().text = oil.ToString();
         stoneStorageDisplay.GetComponent<TextMeshProUGUI>().text = stone.ToString();
         woodStorageDisplay.GetComponent<TextMeshProUGUI>().text = wood.ToString();
-        coinsStorageDisplay.GetComponent<TextMeshProUGUI>().text = coins.ToString();
+        coinsStorageDisplay.GetComponent<TextMeshProUGUI>().text = formattedCoins;
         gemsStorageDisplay.GetComponent<TextMeshProUGUI>().text = gems.ToString();
         
         capacityDisplay.GetComponent<TextMeshProUGUI>().text = oilCapacity + " ед МАХ";

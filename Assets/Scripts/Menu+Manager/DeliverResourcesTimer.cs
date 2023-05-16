@@ -3,11 +3,11 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class TimeManager : MonoBehaviour
+public class DeliverResourcesTimer : MonoBehaviour
 {
     [SerializeField] private Storage storage;
     [SerializeField] private SaveManager saveManager;
-    [SerializeField] private TradeMenu tradeMenu;
+    [SerializeField] private BuyingMenu buyingMenu;
     [SerializeField] private AudioManager audioManager;
     
     [SerializeField] private GameObject timeLeftDisplay;
@@ -19,7 +19,9 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private float passedTime;
     [SerializeField] private bool takingAway;
 
-    #region Public links
+    private bool _timeIsDisplaying;
+
+    #region Public Links
     public float TimeLeft
     {
         get => timeLeft;
@@ -40,16 +42,21 @@ public class TimeManager : MonoBehaviour
         get => takingAway;
         set => takingAway = value;
     }
+    public bool TimeIsDisplaying
+    {
+        get => _timeIsDisplaying;
+        set => _timeIsDisplaying = value;
+    }
     #endregion
-    
+
     private void Start()
     {
         float minutes = Mathf.FloorToInt(timeLeft / 60);
         float seconds = Mathf.FloorToInt(timeLeft % 60);
         
-        StartCoroutine(ShipTimer());
+        StartCoroutine(ResourcesTimer());
         
-        timeLeftDisplay.GetComponent<TextMeshProUGUI>().text = string.Format("Корабль вернётся через {0:00}:{1:00}", minutes, seconds);
+        timeLeftDisplay.GetComponent<TextMeshProUGUI>().text = string.Format("Корабль с ресурсами прибудет через {0:00}:{1:00}", minutes, seconds);
         
         if (!string.IsNullOrEmpty(saveManager.TimeWhenGameClosed))
         {
@@ -74,9 +81,9 @@ public class TimeManager : MonoBehaviour
     {
         if (!takingAway && timeLeft > 0)
         {
-            StartCoroutine(ShipTimer());
+            StartCoroutine(ResourcesTimer());
         }
-
+        
         if (timeLeft <= 0)
         {
             returnShipButton.SetActive(false);
@@ -85,32 +92,34 @@ public class TimeManager : MonoBehaviour
         {
             returnShipButton.SetActive(true);
         }
+
+        if (_timeIsDisplaying) {timeLeftDisplay.SetActive(true);}
+        else {timeLeftDisplay.SetActive(false);}
     }
 
     public void StartShipTimer()
     {
-        if (tradeMenu.OilAmount <= 5)
+        if (buyingMenu.TotalOrderAmount <= 5)
         {
             timeLeft += 180;
             neededTime = 180;
         }
-        else if (tradeMenu.OilAmount > 5 && tradeMenu.OilAmount <= 20)
+        else if (buyingMenu.TotalOrderAmount > 5 && buyingMenu.TotalOrderAmount <= 10)
         {
             timeLeft += 360;
             neededTime = 360;
         }
-        else if (tradeMenu.OilAmount > 20 && tradeMenu.OilAmount <= 50)
+        else if (buyingMenu.TotalOrderAmount > 10 && buyingMenu.TotalOrderAmount <= 20)
         {
             timeLeft += 720;
             neededTime = 720;
         }
-        else if (tradeMenu.OilAmount > 50)
+        else if (buyingMenu.TotalOrderAmount > 30)
         {
             timeLeft += 1080;
             neededTime = 1080;
         }
-        
-        StartCoroutine(ShipTimer());
+        StartCoroutine(ResourcesTimer());
     }
 
     public void EndShipTimer()
@@ -129,7 +138,7 @@ public class TimeManager : MonoBehaviour
         }
     }
 
-    IEnumerator ShipTimer()
+    IEnumerator ResourcesTimer()
     {
         takingAway = true;
         yield return new WaitForSeconds(1);
@@ -160,7 +169,7 @@ public class TimeManager : MonoBehaviour
         }
         else
         {
-            timeLeftDisplay.GetComponent<TextMeshProUGUI>().text = string.Format("Корабль вернётся через {0:00}:{1:00}", minutes, seconds);
+            timeLeftDisplay.GetComponent<TextMeshProUGUI>().text = string.Format("Корабль с ресурсами прибудет через {0:00}:{1:00}", minutes, seconds);
         }
         takingAway = false;
     }

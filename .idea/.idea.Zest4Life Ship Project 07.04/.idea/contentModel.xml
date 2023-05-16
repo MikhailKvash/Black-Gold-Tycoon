@@ -38,22 +38,28 @@
           <e p="Menu+Manager" t="Include">
             <e p="AudioManager.cs" t="Include" />
             <e p="BuyingMenu.cs" t="Include" />
+            <e p="DeliverResourcesTimer.cs" t="Include" />
             <e p="FishSpawner.cs" t="Include" />
             <e p="MapMenu.cs" t="Include" />
             <e p="SettingsManager.cs" t="Include" />
             <e p="ShipTimeManager.cs" t="Include" />
             <e p="Sound.cs" t="Include" />
+            <e p="StartingMenu.cs" t="Include" />
             <e p="TradeMenu.cs" t="Include" />
             <e p="UpgradeMenu.cs" t="Include" />
+            <e p="XpRPManager.cs" t="Include" />
           </e>
           <e p="OilTower.cs" t="Include" />
           <e p="OilVillager.cs" t="Include" />
           <e p="ResourceShip.cs" t="Include" />
           <e p="SaveSystem" t="Include">
             <e p="GameData" t="Include">
+              <e p="BuyingMenuData.cs" t="Include" />
               <e p="MainBuildingData.cs" t="Include" />
               <e p="OilTowerData.cs" t="Include" />
               <e p="OilVillagerData.cs" t="Include" />
+              <e p="ResourceShipData.cs" t="Include" />
+              <e p="ResourcesTimerData.cs" t="Include" />
               <e p="SaveManagerData.cs" t="Include" />
               <e p="ShipData.cs" t="Include" />
               <e p="ShipTimerData.cs" t="Include" />
@@ -61,6 +67,7 @@
               <e p="StorageData.cs" t="Include" />
               <e p="TradeMenuData.cs" t="Include" />
               <e p="UpgradeMenuData.cs" t="Include" />
+              <e p="XpRpData.cs" t="Include" />
             </e>
             <e p="SaveManager.cs" t="Include" />
             <e p="SaveSystem.cs" t="Include" />

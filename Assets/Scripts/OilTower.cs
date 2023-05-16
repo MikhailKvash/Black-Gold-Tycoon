@@ -23,6 +23,7 @@ public class OilTower : MonoBehaviour
     
     private float _passedTimeToFillSlider;
 
+    #region Public links
     public float Oil
     {
         get => oil;
@@ -31,32 +32,28 @@ public class OilTower : MonoBehaviour
             oil = (float) Math.Round(value, 1);
         }
     }
-
     public float Capacity
     {
         get => oilMax;
         set => oilMax = value;
     }
-
     public float TimeToGenerateOil
     {
         get => timeToGenerateOil;
         set => timeToGenerateOil = value;
     }
-
     public int Level
     {
         get => oilLevel;
         set => oilLevel = value;
     }
-
     public float PassedTimeToFillSlider
     {
         get => _passedTimeToFillSlider;
         set => _passedTimeToFillSlider = value;
     }
-
-
+    #endregion
+    
     private void Start()
     {
         StartCoroutine(GenerateOil());

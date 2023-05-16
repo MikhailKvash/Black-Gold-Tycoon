@@ -7,7 +7,22 @@ public class CarriedOilNumber : MonoBehaviour
     [SerializeField] private OilVillager oilVillager;
     
     public TextMeshPro TextDialog;
+    private float _carriedOilNumber;
+    private bool _singleDelivery;
 
+    #region Public links
+    public float CarriedOilNumber1
+    {
+        get => _carriedOilNumber;
+        set => _carriedOilNumber = value;
+    }
+    public bool SingleDelivery
+    {
+        get => _singleDelivery;
+        set => _singleDelivery = value;
+    }
+    #endregion
+    
     private IEnumerator TypeText(string text)
     {
         TextDialog.text = "";
@@ -16,7 +31,10 @@ public class CarriedOilNumber : MonoBehaviour
             TextDialog.text += c;
             yield return new WaitForSeconds(0.1f);
         }
+        yield return new WaitForSeconds(0.6f);
+        StartCoroutine(FadeOutText());
     }
+    
     IEnumerator FadeOutText()
     {
         if (TextDialog != null)
@@ -34,25 +52,20 @@ public class CarriedOilNumber : MonoBehaviour
             TextDialog.color = new Color(textColor.r, textColor.g, textColor.b, 1f);
         }
     }
+    
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !_singleDelivery)
         {
+            _singleDelivery = true;
             if (oilVillager.CarryingOil <= 1)
             {
-                StartCoroutine(TypeText("+" + oilVillager.CarryingOil + " Нефть"));
+                StartCoroutine(TypeText("+" + _carriedOilNumber + " Нефть"));
             }
             else
             {
-                StartCoroutine(TypeText("+" + oilVillager.CarryingOil + " Нефти"));
+                StartCoroutine(TypeText("+" + _carriedOilNumber + " Нефти"));
             }
-        }
-    }
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            StartCoroutine(FadeOutText());
         }
     }
 }

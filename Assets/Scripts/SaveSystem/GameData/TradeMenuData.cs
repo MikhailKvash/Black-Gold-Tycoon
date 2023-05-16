@@ -1,7 +1,8 @@
 [System.Serializable]
 public class TradeMenuData
 {
-    public float oil;
+    public float oilSlider;
+    public float oilAmount;
     public float coins;
     
     public bool shipAway;
@@ -11,7 +12,8 @@ public class TradeMenuData
 
     public TradeMenuData(TradeMenu tradeMenu)
     {
-        oil = tradeMenu.OilAmount;
+        oilSlider = tradeMenu.OilSliderAmount;
+        oilAmount = tradeMenu.OilAmount;
         coins = tradeMenu.ProfitCoins;
         
         shipAway = tradeMenu.ShipAway;

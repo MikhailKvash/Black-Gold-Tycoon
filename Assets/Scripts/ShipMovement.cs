@@ -13,6 +13,7 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] private TradeMenu tradeMenu;
     [SerializeField] private TimeManager timeManager;
     [SerializeField] private AudioManager audioManager;
+    [SerializeField] private XpRpManager xpRpManager;
     [SerializeField] private GameObject mapButton;
 
     private NavMeshAgent _navMeshAgent;
@@ -22,8 +23,8 @@ public class ShipMovement : MonoBehaviour
     private bool _goingAway;
     private bool _goingToLastPoint;
     private bool _goingDocks;
-    
 
+    #region Public links
     public bool SingleDelivery
     {
         get => _singleDelivery;
@@ -34,7 +35,6 @@ public class ShipMovement : MonoBehaviour
         get => _readyToReturnToDocks;
         set => _readyToReturnToDocks = value;
     }
-
     public bool GoingAway
     {
         get => _goingAway;
@@ -50,7 +50,8 @@ public class ShipMovement : MonoBehaviour
         get => _goingDocks;
         set => _goingDocks = value;
     }
-
+    #endregion
+    
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
@@ -100,6 +101,8 @@ public class ShipMovement : MonoBehaviour
             tradeMenu.ShipAway = false;
             tradeMenu.ResetTrading();
             audioManager.Play("ShipLeaveAndReturn");
+            xpRpManager.Xp += 0.2f;
+            xpRpManager.Rp += 0.3f;
         }
     }
 

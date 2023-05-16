@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -8,176 +5,265 @@ public class UpgradeMenu : MonoBehaviour
 {
     [SerializeField] private GameObject notEnoughMessage;
 
-    [SerializeField] private GameObject upgradeOilLevelButton;
-    [SerializeField] private GameObject upgradeOilCapacityButton;
-    [SerializeField] private GameObject upgradeCarrierSpeedButton;
-    [SerializeField] private GameObject upgradeCarrierCapacityButton;
-    [SerializeField] private GameObject upgradeStorageCapacityButton;
+    [SerializeField] private GameObject oilLevelStoneDisplay;
+    [SerializeField] private GameObject oilLevelWoodDisplay;
+    [SerializeField] private GameObject oilLevelCoinsDisplay;
     
-    [SerializeField] private GameObject upgradeMainBuildingLevelText;
+    [SerializeField] private GameObject oilCapacityCoinsDisplay;
+    
+    [SerializeField] private GameObject carrierCapacityCoinsDisplay;
+    
+    [SerializeField] private GameObject storageCapacityStoneDisplay;
+    [SerializeField] private GameObject storageCapacityWoodDisplay;
+    [SerializeField] private GameObject storageCapacityCoinsDisplay;
+    
+    [SerializeField] private GameObject upgradeStorageCapacityButton;
     [SerializeField] private GameObject upgradeStorageCapacityText;
+    [SerializeField] private GameObject storageStoneValueIcon;
+    [SerializeField] private GameObject storageWoodValueIcon;
+    [SerializeField] private GameObject storageCoinsValueIcon;
+    
+    [SerializeField] private GameObject MainBuildingLevelFuelDisplay;
+    [SerializeField] private GameObject MainBuildingLevelStoneDisplay;
+    [SerializeField] private GameObject MainBuildingLevelWoodDisplay;
+    [SerializeField] private GameObject MainBuildingLevelCoinsDisplay;
 
     [SerializeField] private OilTower oilTower;
     [SerializeField] private OilVillager oilCarrier;
     [SerializeField] private Storage storage;
     [SerializeField] private MainBuilding mainBuilding;
+    [SerializeField] private XpRpManager xpRpManager;
 
     [SerializeField] private AudioManager audioManager;
 
-    private float _valueMultiplier = 1.07f;
-    private int _oilLevelValue = 100;
-    private int _oilCapacityValue = 100;
-    private int _carrierSpeedValue = 100;
-    private int _carrierCapacityValue = 100;
-    private int _storageCapacityValue = 100;
-    private int _mainBuildingLevelValue = 100;
+    private int _oilLevelStoneValue = 4;
+    private int _oilLevelWoodValue = 2;
+    private int _oilLevelCoinsValue = 2000;
 
-    public int OilLevelValue
+    private int _oilCapacityCoinsValue = 1000;
+    
+    private int _carrierCapacityCoinsValue = 1000;
+    
+    private int _storageCapacityStoneValue = 4;
+    private int _storageCapacityWoodValue = 3;
+    private int _storageCapacityCoinsValue = 1500;
+    
+    private int _mainBuildingLevelFuelValue = 2;
+    private int _mainBuildingLevelStoneValue = 4;
+    private int _mainBuildingLevelWoodValue = 4;
+    private int _mainBuildingLevelCoinsValue = 2500;
+
+    #region Public links
+    public int OilLevelStoneValue
     {
-        get => _oilLevelValue;
-        set => _oilLevelValue = value;
+        get => _oilLevelStoneValue;
+        set => _oilLevelStoneValue = value;
     }
-    public int OilCapacityValue
+    public int OilLevelWoodValue
     {
-        get => _oilCapacityValue;
-        set => _oilCapacityValue = value;
+        get => _oilLevelWoodValue;
+        set => _oilLevelWoodValue = value;
     }
-    public int CarrierSpeedValue
+    public int OilLevelCoinsValue
     {
-        get => _carrierSpeedValue;
-        set => _carrierSpeedValue = value;
+        get => _oilLevelCoinsValue;
+        set => _oilLevelCoinsValue = value;
     }
-    public int CarrierCapacityValue
+    public int OilCapacityCoinsValue
     {
-        get => _carrierCapacityValue;
-        set => _carrierCapacityValue = value;
+        get => _oilCapacityCoinsValue;
+        set => _oilCapacityCoinsValue = value;
     }
-    public int StorageCapacityValue
+    public int CarrierCapacityCoinsValue
     {
-        get => _storageCapacityValue;
-        set => _storageCapacityValue = value;
+        get => _carrierCapacityCoinsValue;
+        set => _carrierCapacityCoinsValue = value;
     }
-    public int MainBuildingLevelValue
+    public int StorageCapacityStoneValue
     {
-        get => _mainBuildingLevelValue;
-        set => _mainBuildingLevelValue = value;
+        get => _storageCapacityStoneValue;
+        set => _storageCapacityStoneValue = value;
     }
+    public int StorageCapacityWoodValue
+    {
+        get => _storageCapacityWoodValue;
+        set => _storageCapacityWoodValue = value;
+    }
+    public int StorageCapacityCoinsValue
+    {
+        get => _storageCapacityCoinsValue;
+        set => _storageCapacityCoinsValue = value;
+    }
+    public int MainBuildingLevelFuelValue
+    {
+        get => _mainBuildingLevelFuelValue;
+        set => _mainBuildingLevelFuelValue = value;
+    }
+    public int MainBuildingLevelStoneValue
+    {
+        get => _mainBuildingLevelStoneValue;
+        set => _mainBuildingLevelStoneValue = value;
+    }
+    public int MainBuildingLevelWoodValue
+    {
+        get => _mainBuildingLevelWoodValue;
+        set => _mainBuildingLevelWoodValue = value;
+    }
+    public int MainBuildingLevelCoinsValue
+    {
+        get => _mainBuildingLevelCoinsValue;
+        set => _mainBuildingLevelCoinsValue = value;
+    }
+    #endregion
 
     private void Update()
     {
-        if (storage.OilCapacity < 60)
+        if (storage.OilCapacity < 80)
         {
-            upgradeStorageCapacityText.GetComponent<TextMeshProUGUI>().text = "Хранилище\n" + _storageCapacityValue;
+            upgradeStorageCapacityText.GetComponent<TextMeshProUGUI>().text = "Улучшить хранилище";
+            storageCapacityStoneDisplay.GetComponent<TextMeshProUGUI>().text = "" + _storageCapacityStoneValue;
+            storageCapacityWoodDisplay.GetComponent<TextMeshProUGUI>().text = "" + _storageCapacityWoodValue;
+            storageCapacityCoinsDisplay.GetComponent<TextMeshProUGUI>().text = "" + _storageCapacityCoinsValue;
         }
         else
         {
-            upgradeStorageCapacityText.GetComponent<TextMeshProUGUI>().text = "Максимальное\nхранилище!";
+            upgradeStorageCapacityText.GetComponent<TextMeshProUGUI>().text = "Максимальное хранилище!";
             upgradeStorageCapacityButton.SetActive(false);
+            storageStoneValueIcon.SetActive(false);
+            storageWoodValueIcon.SetActive(false);
+            storageCoinsValueIcon.SetActive(false);
         }
 
-        upgradeOilLevelButton.GetComponent<TextMeshProUGUI>().text = "Скорость\n" + _oilLevelValue;
-        upgradeOilCapacityButton.GetComponent<TextMeshProUGUI>().text = "Хранилище вышки\n" + _oilCapacityValue;
-        upgradeCarrierSpeedButton.GetComponent<TextMeshProUGUI>().text = "Скорость\n" + _carrierSpeedValue;
-        upgradeCarrierCapacityButton.GetComponent<TextMeshProUGUI>().text = "Объём\n" + _carrierCapacityValue;
-        upgradeMainBuildingLevelText.GetComponent<TextMeshProUGUI>().text = "Уровень\n" + _mainBuildingLevelValue;
+        oilLevelStoneDisplay.GetComponent<TextMeshProUGUI>().text = "" + _oilLevelStoneValue;
+        oilLevelWoodDisplay.GetComponent<TextMeshProUGUI>().text = "" + _oilLevelWoodValue;
+        oilLevelCoinsDisplay.GetComponent<TextMeshProUGUI>().text = "" + _oilLevelCoinsValue;
+        
+        oilCapacityCoinsDisplay.GetComponent<TextMeshProUGUI>().text = "" + _oilCapacityCoinsValue;
+        
+        carrierCapacityCoinsDisplay.GetComponent<TextMeshProUGUI>().text = "" + _carrierCapacityCoinsValue;
+        
+        MainBuildingLevelFuelDisplay.GetComponent<TextMeshProUGUI>().text = "" + _mainBuildingLevelFuelValue;
+        MainBuildingLevelStoneDisplay.GetComponent<TextMeshProUGUI>().text = "" + _mainBuildingLevelStoneValue;
+        MainBuildingLevelWoodDisplay.GetComponent<TextMeshProUGUI>().text = "" + _mainBuildingLevelWoodValue;
+        MainBuildingLevelCoinsDisplay.GetComponent<TextMeshProUGUI>().text = "" + _mainBuildingLevelCoinsValue;
     }
 
     public void UpgradeOilLevel()
     {
-        if (storage.Coins > _oilLevelValue)
+        if (storage.Stone >= _oilLevelStoneValue && storage.Wood >= _oilLevelWoodValue && storage.Coins >= _oilLevelCoinsValue)
         {
+            storage.Stone -= _oilLevelStoneValue;
+            storage.Wood -= _oilLevelWoodValue;
+            storage.Coins -= _oilLevelCoinsValue;
+            _oilLevelStoneValue *= 2;
+            _oilLevelWoodValue *= 2;
+            _oilLevelCoinsValue *= 2;
+            
             oilTower.Level += 1;
-            storage.Coins -= _oilLevelValue;
-            _oilLevelValue = (int)(_oilLevelValue * _valueMultiplier);
+            xpRpManager.Xp += 0.3f;
+            xpRpManager.Rp += 0.6f;
             audioManager.Play("Upgrade");
         }
         else
         {
-            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно монет!";
+            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно ресурсов!";
             notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
+            audioManager.Play("NotEnough");
         }
     }
     
     public void UpgradeOilCapacity()
     {
-        if (storage.Coins > _oilCapacityValue)
+        if (storage.Coins >= _oilCapacityCoinsValue)
         {
+            storage.Coins -= _oilCapacityCoinsValue;
+            _oilCapacityCoinsValue *= 2;
+            
             oilTower.Capacity += 10;
-            storage.Coins -= _oilCapacityValue;
-            _oilCapacityValue = (int)(_oilCapacityValue * _valueMultiplier);
+            xpRpManager.Xp += 0.3f;
+            xpRpManager.Rp += 0.6f;
             audioManager.Play("Upgrade");
         }
         else
         {
-            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно монет!";
+            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно ресурсов!";
             notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
+            audioManager.Play("NotEnough");
         }
     }
-    
-    public void UpgradeCarrierSpeed()
-    {
-        if (storage.Coins > _carrierSpeedValue)
-        {
-            oilCarrier.Speed += 1;
-            storage.Coins -= _carrierSpeedValue;
-            _carrierSpeedValue = (int)(_carrierSpeedValue * _valueMultiplier);
-            audioManager.Play("Upgrade");
-        }
-        else
-        {
-            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно монет!";
-            notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
-        }
-    }
-    
+
     public void UpgradeCarrierCapacity()
     {
-        if (storage.Coins > _carrierCapacityValue)
+        if (storage.Coins >= _carrierCapacityCoinsValue)
         {
+            storage.Coins -= _carrierCapacityCoinsValue;
+            _carrierCapacityCoinsValue *= 2;
+            
             oilCarrier.Capacity += 1;
-            storage.Coins -= _carrierCapacityValue;
-            _carrierCapacityValue = (int)(_carrierCapacityValue * _valueMultiplier);
+            xpRpManager.Xp += 0.3f;
+            xpRpManager.Rp += 0.6f;
             audioManager.Play("Upgrade");
         }
         else
         {
-            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно монет!";
+            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно ресурсов!";
             notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
+            audioManager.Play("NotEnough");
         }
     }
 
     public void UpgradeStorageCapacity()
     {
-        if (storage.Coins > _storageCapacityValue || storage.OilCapacity == 60)
+        if (storage.Stone >= _storageCapacityStoneValue && storage.Wood >= _storageCapacityWoodValue && 
+            storage.Coins >= _storageCapacityCoinsValue || storage.OilCapacity == 80)
         {
+            storage.Stone -= _storageCapacityStoneValue;
+            storage.Wood -= _storageCapacityWoodValue;
+            storage.Coins -= _storageCapacityCoinsValue;
+            _storageCapacityStoneValue *= 2;
+            _storageCapacityWoodValue *= 2;
+            _storageCapacityCoinsValue *= 2;
+            
             storage.OilCapacity += 10;
             storage.FuelCapacity += 10;
             storage.WoodCapacity += 10;
             storage.StoneCapacity += 10;
-            storage.Coins -= _storageCapacityValue;
-            _storageCapacityValue = (int)(_storageCapacityValue * _valueMultiplier);
+            xpRpManager.Xp += 0.3f;
+            xpRpManager.Rp += 0.6f;
             audioManager.Play("Upgrade");
         }
         else
         {
-            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно монет!";
+            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно ресурсов!";
             notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
+            audioManager.Play("NotEnough");
         }
     }
     
     public void UpgradeMainBuildingLevel()
     {
-        if (storage.Coins > _mainBuildingLevelValue)
+        if (storage.Fuel >= _mainBuildingLevelFuelValue && storage.Stone >= _mainBuildingLevelStoneValue &&
+            storage.Wood >= _mainBuildingLevelWoodValue && storage.Coins >= _mainBuildingLevelCoinsValue)
         {
+            storage.Fuel -= _mainBuildingLevelFuelValue;
+            storage.Stone -= _mainBuildingLevelStoneValue;
+            storage.Wood -= _mainBuildingLevelWoodValue;
+            storage.Coins -= _mainBuildingLevelCoinsValue;
+            _mainBuildingLevelFuelValue *= 2;
+            _mainBuildingLevelStoneValue *= 2;
+            _mainBuildingLevelWoodValue *= 2;
+            _mainBuildingLevelCoinsValue *= 2;
+            
             mainBuilding.Level += 1;
-            storage.Coins -= _mainBuildingLevelValue;
-            _mainBuildingLevelValue = (int)(_mainBuildingLevelValue * _valueMultiplier);
+            xpRpManager.RpLvl += 2f;
+            xpRpManager.PlayRpUp();
             audioManager.Play("Upgrade");
         }
         else
         {
-            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно монет!";
+            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Недостаточно ресурсов!";
             notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
+            audioManager.Play("NotEnough");
         }
     }
 }

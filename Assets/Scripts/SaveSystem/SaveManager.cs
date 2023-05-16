@@ -10,9 +10,13 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private OilVillager oilVillager;
     [SerializeField] private ShipVillager shipVillager;
     [SerializeField] private ShipMovement ship;
+    [SerializeField] private ResourceShip resourceShip;
     [SerializeField] private TradeMenu tradeMenu;
+    [SerializeField] private BuyingMenu buyingMenu;
     [SerializeField] private UpgradeMenu upgradeMenu;
     [SerializeField] private TimeManager timeManager;
+    [SerializeField] private DeliverResourcesTimer resourcesTimer;
+    [SerializeField] private XpRpManager xpRpManager;
     [SerializeField] private SaveManager saveManager;
 
     [SerializeField] private GameObject noLoadingText;
@@ -20,11 +24,13 @@ public class SaveManager : MonoBehaviour
     private string _timeWhenGameClosed;
     private bool _noLoading;
 
+    #region Public links
     public string TimeWhenGameClosed
     {
         get => _timeWhenGameClosed;
         set => _timeWhenGameClosed = value;
     }
+    #endregion
 
     private void Start()
     {
@@ -46,7 +52,6 @@ public class SaveManager : MonoBehaviour
         {
             noLoadingText.GetComponent<TextMeshProUGUI>().text = "Загружать";
         }
-        
     }
 
     public void LoadOrNo()
@@ -86,9 +91,13 @@ public class SaveManager : MonoBehaviour
         SaveSystem.SaveOilVillager(oilVillager);
         SaveSystem.SaveShipVillager(shipVillager);
         SaveSystem.SaveShip(ship);
+        SaveSystem.SaveResourceShip(resourceShip);
         SaveSystem.SaveTradeMenu(tradeMenu);
+        SaveSystem.SaveBuyingMenu(buyingMenu);
         SaveSystem.SaveUpgradeMenu(upgradeMenu);
         SaveSystem.SaveTimeManager(timeManager);
+        SaveSystem.SaveDeliverResourcesTimer(resourcesTimer);
+        SaveSystem.SaveXpRpManager(xpRpManager);
         SaveSystem.SaveSaveManager(saveManager);
     }
 
@@ -100,9 +109,13 @@ public class SaveManager : MonoBehaviour
         OilVillagerData oilVillagerData = SaveSystem.LoadOilVillager();
         ShipVillagerData shipVillagerData = SaveSystem.LoadShipVillager();
         ShipData shipData = SaveSystem.LoadShip();
+        ResourceShipData resourceShipData = SaveSystem.LoadResourceShip();
         TradeMenuData tradeMenuData = SaveSystem.LoadTradeMenu();
+        BuyingMenuData buyingMenuData = SaveSystem.LoadBuyingMenu();
         UpgradeMenuData upgradeMenuData = SaveSystem.LoadUpgradeMenu();
         TimeManagerData timeManagerData = SaveSystem.LoadTimeManager();
+        ResourcesTimerData resourcesTimerData = SaveSystem.LoadDeliverResourcesTimer();
+        XpRpData xpRpData = SaveSystem.LoadXpRpManager();
         SaveManagerData saveManagerData = SaveSystem.LoadSaveManager();
         
 
@@ -126,7 +139,6 @@ public class SaveManager : MonoBehaviour
         mainBuilding.Level = mainBuildingData.level;
 
         oilVillager.CarryingOil = oilVillagerData.carryingOil;
-        oilVillager.Speed = oilVillagerData.speed;
         oilVillager.Capacity = oilVillagerData.capacity;
         oilVillager.TakeOilOnce = oilVillagerData.takeOilOnce;
         oilVillager.DropOilOnce = oilVillagerData.dropOilOnce;
@@ -158,24 +170,64 @@ public class SaveManager : MonoBehaviour
         shipPosition.z = shipData.position[2];
         ship.transform.position = shipPosition;
 
-        tradeMenu.OilAmount = tradeMenuData.oil;
+        resourceShip.SingleDelivery = resourceShipData.singleDelivery;
+        resourceShip.GoingAway = resourceShipData.goingAway;
+        resourceShip.GoingDocks = resourceShipData.goingDocks;
+        resourceShip.IsWaiting = resourceShipData.isWaiting;
+        Vector3 resourceShipPosition;
+        resourceShipPosition.x = resourceShipData.position[0];
+        resourceShipPosition.y = resourceShipData.position[1];
+        resourceShipPosition.z = resourceShipData.position[2];
+        resourceShip.transform.position = resourceShipPosition;
+
+        tradeMenu.OilSliderAmount = tradeMenuData.oilSlider;
+        tradeMenu.OilAmount = tradeMenuData.oilAmount;
         tradeMenu.ProfitCoins = tradeMenuData.coins;
         tradeMenu.ShipAway = tradeMenuData.shipAway;
         tradeMenu.SentForCargo = tradeMenuData.sentForCargo;
         tradeMenu.SendShipButtonOff = tradeMenuData.sendShipButtonOff;
         tradeMenu.SliderHandleOff = tradeMenuData.sliderHandleOff;
 
-        upgradeMenu.OilLevelValue = upgradeMenuData.oilLevelValue;
-        upgradeMenu.OilCapacityValue = upgradeMenuData.oilCapacityValue;
-        upgradeMenu.CarrierSpeedValue = upgradeMenuData.carrierSpeedValue;
-        upgradeMenu.CarrierCapacityValue = upgradeMenuData.carrierCapacityValue;
-        upgradeMenu.StorageCapacityValue = upgradeMenuData.storageCapacityValue;
-        upgradeMenu.MainBuildingLevelValue = upgradeMenuData.mainBuildingLevelValue;
+        buyingMenu.CoinsLeft = buyingMenuData.coinsLeft;
+        buyingMenu.OrderCost = buyingMenuData.orderCost;
+        buyingMenu.Stone = buyingMenuData.stone;
+        buyingMenu.Fuel = buyingMenuData.fuel;
+        buyingMenu.Wood = buyingMenuData.wood;
+        buyingMenu.TotalOrderAmount = buyingMenuData.totalOrderAmount;
+        buyingMenu.ToggleNumber = buyingMenuData.toggleNumber;
+        buyingMenu.StoneToggle = buyingMenuData.stoneToggle;
+        buyingMenu.FuelToggle = buyingMenuData.fuelToggle;
+        buyingMenu.WoodToggle = buyingMenuData.woodToggle;
+        buyingMenu.ResourcesOrdered = buyingMenuData.resourcesOrdered;
+
+        upgradeMenu.OilLevelStoneValue = upgradeMenuData.oilLevelStoneValue;
+        upgradeMenu.OilLevelWoodValue = upgradeMenuData.oilLevelWoodValue;
+        upgradeMenu.OilLevelCoinsValue = upgradeMenuData.oilLevelCoinsValue;
+        upgradeMenu.OilCapacityCoinsValue = upgradeMenuData.oilCapacityCoinsValue;
+        upgradeMenu.CarrierCapacityCoinsValue = upgradeMenuData.carrierCapacityCoinsValue;
+        upgradeMenu.StorageCapacityStoneValue = upgradeMenuData.storageCapacityStoneValue;
+        upgradeMenu.StorageCapacityWoodValue = upgradeMenuData.storageCapacityWoodValue;
+        upgradeMenu.StorageCapacityCoinsValue = upgradeMenuData.storageCapacityCoinsValue;
+        upgradeMenu.MainBuildingLevelFuelValue = upgradeMenuData.mainBuildingLevelFuelValue;
+        upgradeMenu.MainBuildingLevelStoneValue = upgradeMenuData.mainBuildingLevelStoneValue;
+        upgradeMenu.MainBuildingLevelWoodValue = upgradeMenuData.mainBuildingLevelWoodValue;
+        upgradeMenu.MainBuildingLevelCoinsValue = upgradeMenuData.mainBuildingLevelCoinsValue;
 
         timeManager.TimeLeft = timeManagerData.timeLeft;
         timeManager.NeededTime = timeManagerData.neededTime;
         timeManager.PassedTime = timeManagerData.passedTime;
         timeManager.TakingAway = timeManagerData.takingAway;
+
+        resourcesTimer.TimeLeft = resourcesTimerData.timeLeft;
+        resourcesTimer.NeededTime = resourcesTimerData.neededTime;
+        resourcesTimer.PassedTime = resourcesTimerData.passedTime;
+        resourcesTimer.TakingAway = resourcesTimerData.takingAway;
+        resourcesTimer.TimeIsDisplaying = resourcesTimerData.timeIsDisplaying;
+
+        xpRpManager.Xp = xpRpData.xp;
+        xpRpManager.Rp = xpRpData.rp;
+        xpRpManager.XpLvl = xpRpData.xpLvl;
+        xpRpManager.RpLvl = xpRpData.rpLvl;
 
         saveManager.TimeWhenGameClosed = saveManagerData.timeWhenGameClosed;
     }
