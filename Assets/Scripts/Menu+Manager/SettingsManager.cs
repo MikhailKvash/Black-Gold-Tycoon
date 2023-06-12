@@ -31,24 +31,24 @@ public class SettingsManager : MonoBehaviour
         _loadedQuality = PlayerPrefs.GetInt("Quality");
         if (_loadedQuality == 0)
         {
-            QualitySettings.SetQualityLevel(0, false);
             lowQualityDisplay.SetActive(true);
             medQualityDisplay.SetActive(false);
             highQualityDisplay.SetActive(false);
+            QualitySettings.SetQualityLevel(0, false);
         }
         if (_loadedQuality == 1)
         {
-            QualitySettings.SetQualityLevel(1, false);
             lowQualityDisplay.SetActive(false);
             medQualityDisplay.SetActive(true);
             highQualityDisplay.SetActive(false);
+            QualitySettings.SetQualityLevel(1, false);
         }
         if (_loadedQuality == 2)
         {
-            QualitySettings.SetQualityLevel(2, false);
             lowQualityDisplay.SetActive(false);
             medQualityDisplay.SetActive(false);
             highQualityDisplay.SetActive(true);
+            QualitySettings.SetQualityLevel(2, false);
         }
 
         _loadedSoundOn = PlayerPrefs.GetInt("SoundOn");
@@ -97,18 +97,27 @@ public class SettingsManager : MonoBehaviour
 
     public void SetQualityLow()
     {
+        lowQualityDisplay.SetActive(true);
+        medQualityDisplay.SetActive(false);
+        highQualityDisplay.SetActive(false);
         QualitySettings.SetQualityLevel(0, false);
         PlayerPrefs.SetInt("Quality", 0);
     }
     
     public void SetQualityMedium()
     {
+        lowQualityDisplay.SetActive(false);
+        medQualityDisplay.SetActive(true);
+        highQualityDisplay.SetActive(false);
         QualitySettings.SetQualityLevel(1, false);
         PlayerPrefs.SetInt("Quality", 1);
     }
     
     public void SetQualityHigh()
     {
+        lowQualityDisplay.SetActive(false);
+        medQualityDisplay.SetActive(false);
+        highQualityDisplay.SetActive(true);
         QualitySettings.SetQualityLevel(2, false);
         PlayerPrefs.SetInt("Quality", 2);
     }

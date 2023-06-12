@@ -60,7 +60,7 @@ public class TimeManager : MonoBehaviour
 
             if (timeLeft <= passedSinceClosingTime.TotalSeconds)
             {
-                EndShipTimer();
+                EndShipTimerOnStart();
             }
             else
             {
@@ -127,6 +127,12 @@ public class TimeManager : MonoBehaviour
             notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
             audioManager.Play("NotEnough");
         }
+    }
+    
+    void EndShipTimerOnStart()
+    {
+        timeLeft = 0;
+        passedTime = neededTime;
     }
 
     IEnumerator ShipTimer()

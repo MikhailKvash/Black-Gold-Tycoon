@@ -8,19 +8,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Editor/UI/GraphicEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Menu+Manager/ShipTimeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/OilTower.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/OilVillager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AnimScripts/CarriedOilNumber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/AnimScripts/CarriedOilNumber.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/StartingMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/SettingsManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OilTower.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/BuyingMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ObjectClicker.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ShipVillager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/OilVillager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/DeliverResourcesTimer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/ShipTimeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Menu+Manager/SettingsManager.cs" />
       </list>
     </option>
   </component>
@@ -67,6 +74,9 @@
       <workItem from="1686567961237" duration="2000" />
       <workItem from="1686568009858" duration="6553000" />
       <workItem from="1686578657536" duration="2000" />
+      <workItem from="1686584735635" duration="736000" />
+      <workItem from="1686585749341" duration="400000" />
+      <workItem from="1686586942474" duration="1169000" />
     </task>
     <servers />
   </component>

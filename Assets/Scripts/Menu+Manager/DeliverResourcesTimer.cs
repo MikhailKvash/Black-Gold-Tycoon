@@ -67,7 +67,7 @@ public class DeliverResourcesTimer : MonoBehaviour
 
             if (timeLeft <= passedSinceClosingTime.TotalSeconds)
             {
-                EndShipTimer();
+                EndShipTimerOnStart();
             }
             else
             {
@@ -136,6 +136,12 @@ public class DeliverResourcesTimer : MonoBehaviour
             notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
             audioManager.Play("NotEnough");
         }
+    }
+
+    void EndShipTimerOnStart()
+    {
+        timeLeft = 0;
+        passedTime = neededTime;
     }
 
     IEnumerator ResourcesTimer()

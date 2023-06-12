@@ -107,8 +107,6 @@ public class OilVillager : MonoBehaviour
                 _takeOilOnce = true;
                 _dropOilOnce = false;
             }
-
-            carriedOilNumber.CarriedOilNumber1 = _carryingOil;
         }
 
         if (storageDistance <= 0.3f && !_dropOilOnce)
@@ -116,6 +114,7 @@ public class OilVillager : MonoBehaviour
             _box = false;
             if (_carryingOil > 0)
             {
+                carriedOilNumber.CarriedOilNumber1 = _carryingOil;
                 carriedOilNumber.SpawnText();
                 if (_carryingOil + storage.Oil <= storage.OilCapacity)
                 {
