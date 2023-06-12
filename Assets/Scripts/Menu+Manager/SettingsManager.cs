@@ -8,7 +8,8 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private GameObject soundOnButton;
     [SerializeField] private GameObject soundOnText;
     [SerializeField] private Slider volumeSlider;
-    
+
+    [SerializeField] private GameObject SettingsMenu;
     [SerializeField] private GameObject lowQualityDisplay;
     [SerializeField] private GameObject medQualityDisplay;
     [SerializeField] private GameObject highQualityDisplay;
@@ -110,5 +111,17 @@ public class SettingsManager : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(2, false);
         PlayerPrefs.SetInt("Quality", 2);
+    }
+
+    public void OpenCloseMenuButton()
+    {
+        if (SettingsMenu.activeSelf)
+        {
+            SettingsMenu.SetActive(false);
+        }
+        else
+        {
+            SettingsMenu.SetActive(true);
+        }
     }
 }

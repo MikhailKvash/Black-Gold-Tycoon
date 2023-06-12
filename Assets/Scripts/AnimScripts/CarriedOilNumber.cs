@@ -8,18 +8,12 @@ public class CarriedOilNumber : MonoBehaviour
     
     public TextMeshPro TextDialog;
     private float _carriedOilNumber;
-    private bool _singleDelivery;
 
     #region Public links
     public float CarriedOilNumber1
     {
         get => _carriedOilNumber;
         set => _carriedOilNumber = value;
-    }
-    public bool SingleDelivery
-    {
-        get => _singleDelivery;
-        set => _singleDelivery = value;
     }
     #endregion
     
@@ -52,20 +46,16 @@ public class CarriedOilNumber : MonoBehaviour
             TextDialog.color = new Color(textColor.r, textColor.g, textColor.b, 1f);
         }
     }
-    
-    void OnTriggerEnter(Collider other)
+
+    public void SpawnText()
     {
-        if (other.CompareTag("Player") && !_singleDelivery)
+        if (oilVillager.CarryingOil <= 1)
         {
-            _singleDelivery = true;
-            if (oilVillager.CarryingOil <= 1)
-            {
-                StartCoroutine(TypeText("+" + _carriedOilNumber + " Нефть"));
-            }
-            else
-            {
-                StartCoroutine(TypeText("+" + _carriedOilNumber + " Нефти"));
-            }
+            StartCoroutine(TypeText("+" + _carriedOilNumber + " Нефть"));
+        }
+        else
+        {
+            StartCoroutine(TypeText("+" + _carriedOilNumber + " Нефти"));
         }
     }
 }

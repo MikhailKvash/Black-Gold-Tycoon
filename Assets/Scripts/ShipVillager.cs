@@ -11,6 +11,7 @@ public class ShipVillager : MonoBehaviour
     
     [SerializeField] private TradeMenu tradeMenu;
     [SerializeField] private ShipVillagerAnimation villagerAnimation;
+    [SerializeField] private GameObject villagerModel;
 
     private NavMeshAgent _navMeshAgent;
 
@@ -49,6 +50,7 @@ public class ShipVillager : MonoBehaviour
     {
         var storageDistance = Vector3.Distance(transform.position, storageEntrance.position);
         var shipDistance = Vector3.Distance(transform.position, shipEntrance.position);
+        var waitingDistance = Vector3.Distance(transform.position, waitingSpot.position);
 
         if (_carryingCargo && !_singleDelivery && !_tookCargo)
         {
@@ -77,6 +79,14 @@ public class ShipVillager : MonoBehaviour
             tradeMenu.ShipLeaving();
             _carryingCargo = false;
             _tookCargo = false;
+        }
+        if (waitingDistance <= 0.3f)
+        {
+            villagerModel.SetActive(false);
+        }
+        else
+        {
+            villagerModel.SetActive(true);
         }
         
         if (_box)

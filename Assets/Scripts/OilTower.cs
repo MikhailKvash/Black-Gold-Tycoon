@@ -11,6 +11,9 @@ public class OilTower : MonoBehaviour
     [SerializeField] private GameObject oilTowerLevelDisplay;
     [SerializeField] private GameObject oilTowerSpeedDisplay;
     [SerializeField] private GameObject oilTowerCapacityDisplay;
+
+    [SerializeField] private GameObject OilTowerSpeedHeader;
+    [SerializeField] private GameObject OilTowerFullCapacityDisplay;
     
     [SerializeField] private AudioManager audioManager;
     [SerializeField] private SaveManager saveManager;
@@ -91,6 +94,21 @@ public class OilTower : MonoBehaviour
         oilTowerLevelDisplay.GetComponent<TextMeshProUGUI>().text = oilLevel + " ";
         oilTowerSpeedDisplay.GetComponent<TextMeshProUGUI>().text = oilLevel + " ед в " + timeToGenerateOil + " секунд";
         oilTowerCapacityDisplay.GetComponent<TextMeshProUGUI>().text = oil + " из " + oilMax;
+
+        if (oil >= oilMax)
+        {
+            OilTowerSpeedHeader.SetActive(false);
+            oilTowerSpeedDisplay.SetActive(false);
+            oilFillSlider.gameObject.SetActive(false);
+            OilTowerFullCapacityDisplay.SetActive(true);
+        }
+        else
+        {
+            OilTowerSpeedHeader.SetActive(true);
+            oilTowerSpeedDisplay.SetActive(true);
+            oilFillSlider.gameObject.SetActive(true);
+            OilTowerFullCapacityDisplay.SetActive(false);
+        }
     }
 
     public void TakeOil(float value)

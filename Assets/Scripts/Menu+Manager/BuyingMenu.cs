@@ -109,6 +109,7 @@ public class BuyingMenu : MonoBehaviour
             sliderHandle.SetActive(false);
             buyingSlider.interactable = false;
             callForResourceShipButton.SetActive(false);
+            notEnoughMoneyDisplay.SetActive(false);
         }
         else
         {
@@ -117,6 +118,7 @@ public class BuyingMenu : MonoBehaviour
             acceptAmountButton.SetActive(true);
             sliderHandle.SetActive(true);
             buyingSlider.interactable = true;
+            notEnoughMoneyDisplay.SetActive(true);
         }
         
         stoneDisplay.GetComponent<TextMeshProUGUI>().text = stone + "";

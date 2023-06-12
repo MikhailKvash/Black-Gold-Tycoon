@@ -27,7 +27,7 @@ public class ObjectClicker : MonoBehaviour
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit, 100f,LayerMask.GetMask("Buildings")))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity,LayerMask.GetMask("Buildings")))
             {
                 if (hit.collider)
                 {
@@ -41,12 +41,12 @@ public class ObjectClicker : MonoBehaviour
                 }
             }
 
-            if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("OilClicker")))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("OilClicker")))
             {
                 oilTower.ClickOil();
             }
             
-            if (Physics.Raycast(ray, out hit, 100f, LayerMask.GetMask("TreasureChest")))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("TreasureChest")))
             {
                 treasureChest.GetReward();
             }

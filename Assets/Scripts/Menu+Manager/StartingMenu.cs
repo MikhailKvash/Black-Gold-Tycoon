@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class StartingMenu : MonoBehaviour
 {
@@ -27,33 +28,42 @@ public class StartingMenu : MonoBehaviour
     public void AcceptName()
     {
         string inputTextString = inputText.text;
-        
-        if (!string.IsNullOrEmpty(inputTextString) && !inputTextString.Contains(" "))
+
+        if (!string.IsNullOrEmpty(inputTextString))
         {
-            playerNameFinal.GetComponent<TextMeshProUGUI>().text = inputText.text;
-            startingMenu.SetActive(false);
-            audioManager.Play("TreasureChest");
-            
-            PlayerPrefs.SetString(PlayerNameKey, inputText.text);
-            PlayerPrefs.Save();
-        }
-        else
-        {
-            if (inputTextString.Contains(" "))
+            if (IsValidName(inputTextString))
             {
-                notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Имя не может содержать пробел!";
-                notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
-                audioManager.Play("NotEnough");
+                playerNameFinal.GetComponent<TextMeshProUGUI>().text = inputText.text;
+                startingMenu.SetActive(false);
+                audioManager.Play("TreasureChest");
+
+                PlayerPrefs.SetString(PlayerNameKey, inputText.text);
+                PlayerPrefs.Save();
             }
             else
             {
-                notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Необходимо ввести имя!";
+                notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Имя не может содержать спецсимволы!";
                 notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
                 audioManager.Play("NotEnough");
             }
         }
+        else
+        {
+            notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Необходимо ввести имя!";
+            notEnoughMessage.GetComponent<Animation>().Play("NotEnoughTradeAnim");
+            audioManager.Play("NotEnough");
+        }
     }
 
+    private bool IsValidName(string name)
+    {
+        // Regular expression pattern to match only letters, digits, and space
+        string pattern = @"^[a-zA-Z0-яА-Я0-9 ]+$";
+
+        // Check if the name matches the pattern
+        return Regex.IsMatch(name, pattern);
+    }
+    
     public void NameNeeded()
     {
         notEnoughMessage.GetComponent<TextMeshProUGUI>().text = "Необходимо ввести имя!";

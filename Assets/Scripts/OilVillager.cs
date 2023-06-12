@@ -16,6 +16,7 @@ public class OilVillager : MonoBehaviour
     [SerializeField] private CarriedOilNumber carriedOilNumber;
     
     [SerializeField] private GameObject oilCapacityDisplay;
+    [SerializeField] private GameObject villagerModel;
     
     [SerializeField] private int carryingOilMax;
 
@@ -86,6 +87,7 @@ public class OilVillager : MonoBehaviour
 
         var towerDistance = Vector3.Distance(transform.position, oilTowerEntrance.position);
         var storageDistance = Vector3.Distance(transform.position, storageEntrance.position);
+        var waitingDistance = Vector3.Distance(transform.position, storageFullWaitSpot.position);
             
         if (towerDistance <= 0.3f && !_takeOilOnce)
         {
@@ -107,7 +109,6 @@ public class OilVillager : MonoBehaviour
             }
 
             carriedOilNumber.CarriedOilNumber1 = _carryingOil;
-            carriedOilNumber.SingleDelivery = false;
         }
 
         if (storageDistance <= 0.3f && !_dropOilOnce)
@@ -115,6 +116,7 @@ public class OilVillager : MonoBehaviour
             _box = false;
             if (_carryingOil > 0)
             {
+                carriedOilNumber.SpawnText();
                 if (_carryingOil + storage.Oil <= storage.OilCapacity)
                 {
                     storage.StoreOil(_carryingOil);
@@ -130,6 +132,15 @@ public class OilVillager : MonoBehaviour
                     _takeOilOnce = false;
                 }
             }
+        }
+        
+        if (waitingDistance <= 0.3f)
+        {
+            villagerModel.SetActive(false);
+        }
+        else
+        {
+            villagerModel.SetActive(true);
         }
     }
 }
